@@ -1,5 +1,15 @@
 # @total-typescript/ts-reset
 
+## 0.3.0
+
+### Minor Changes
+
+- ed9edc1: Added improved typings for Set.has
+
+### Patch Changes
+
+- d27e819: Fixed issue where webpack wasn't recognizing the exports map
+
 ## 0.2.1
 
 ### Patch Changes

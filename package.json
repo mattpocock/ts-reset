@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsx build.ts",
     "lint": "tsc && tsx lint.ts && check-export-map",
-    "release": "pnpm run lint && pnpm run build && changeset publish"
+    "release": "pnpm run build && pnpm run lint && changeset publish"
   },
   "exports": {
     "./package.json": "./package.json",

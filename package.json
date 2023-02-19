@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsup",
     "lint": "tsc && node lint.js",
-    "release": "pnpm run lint && pnpm run build && changeset release"
+    "release": "pnpm run lint && pnpm run build && changeset publish"
   },
   "exports": {
     ".": {

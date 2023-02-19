@@ -1,5 +1,11 @@
 # @total-typescript/ts-reset
 
+## 0.3.1
+
+### Patch Changes
+
+- Fixed a bug where Array.includes was returning a predicate, which gave false positives.
+
 ## 0.3.0
 
 ### Minor Changes

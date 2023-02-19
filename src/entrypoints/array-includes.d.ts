@@ -11,5 +11,5 @@ interface Array<T> {
   includes(
     searchElement: T | (TSReset.WidenLiteral<T> & {}),
     fromIndex?: number,
-  ): searchElement is T;
+  ): boolean;
 }

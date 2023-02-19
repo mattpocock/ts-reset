@@ -11,7 +11,7 @@ for (const entrypoint of fs.readdirSync(entrypointsPath)) {
     __dirname,
     path.join(entrypointsPath, entrypoint),
   );
-  const entrypointName = path.basename(entrypointPath);
+  const entrypointName = path.basename(entrypointPath, ".ts");
   entry[entrypointName] = entrypointPath;
 }
 

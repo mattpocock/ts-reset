@@ -7,3 +7,11 @@ doNotExecute(() => {
     type tests = [Expect<Equal<typeof maybeArr, unknown[]>>];
   }
 });
+
+doNotExecute(() => {
+  const arrOrString = [] as string[] | string;
+
+  if (Array.isArray(arrOrString)) {
+    type tests = [Expect<Equal<typeof arrOrString, string[]>>];
+  }
+});

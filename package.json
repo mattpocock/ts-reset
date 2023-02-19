@@ -1,16 +1,44 @@
 {
-  "name": "any-be-gone",
-  "version": "1.0.0",
+  "name": "@total-typescript/ts-reset",
+  "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/recommended.js",
   "scripts": {
     "build": "tsup",
-    "lint": "tsc"
+    "lint": "tsc && node lint.js",
+    "release": "pnpm run lint && pnpm run build && changeset release"
+  },
+  "exports": {
+    ".": {
+      "require": "./dist/recommended.js",
+      "import": "./dist/recommended.mjs"
+    },
+    "./recommended": {
+      "require": "./dist/recommended.js",
+      "import": "./dist/recommended.mjs"
+    },
+    "./filter-boolean": {
+      "require": "./dist/filter-boolean.js",
+      "import": "./dist/filter-boolean.mjs"
+    },
+    "./is-array": {
+      "require": "./dist/is-array.js",
+      "import": "./dist/is-array.mjs"
+    },
+    "./json-parse": {
+      "require": "./dist/json-parse.js",
+      "import": "./dist/json-parse.mjs"
+    },
+    "./fetch": {
+      "require": "./dist/fetch.js",
+      "import": "./dist/fetch.mjs"
+    }
   },
   "keywords": [],
   "author": "Matt Pocock",
   "license": "ISC",
   "devDependencies": {
+    "@changesets/cli": "^2.26.0",
     "@types/node": "^18.14.0",
     "tsup": "^6.6.3",
     "typescript": "^4.9.5"

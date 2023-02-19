@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "",
   "main": "./dist/recommended.js",
+  "private": false,
   "scripts": {
     "build": "tsup",
     "lint": "tsc && node lint.js",

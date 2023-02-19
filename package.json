@@ -1,8 +1,9 @@
 {
   "name": "@total-typescript/ts-reset",
   "version": "0.1.4",
-  "description": "",
+  "description": "A CSS reset for TypeScript, improving types for common JavaScript API's",
   "private": false,
+  "repository": "https://github.com/total-typescript/ts-reset",
   "scripts": {
     "build": "tsx build.ts",
     "lint": "tsc && tsx lint.ts && check-export-map",

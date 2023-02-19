@@ -1,5 +1,15 @@
 # @total-typescript/ts-reset
 
+## 0.2.0
+
+### Minor Changes
+
+- e5a33c9: Added support for array.includes
+
+### Patch Changes
+
+- 8fe8e29: Improved filter-boolean to handle falsy values, not just NonNullable values
+
 ## 0.1.4
 
 ### Patch Changes

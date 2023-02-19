@@ -12,27 +12,33 @@
   "exports": {
     ".": {
       "require": "./dist/recommended.js",
-      "import": "./dist/recommended.mjs"
+      "import": "./dist/recommended.mjs",
+      "types": "./dist/recommended.d.ts"
     },
     "./recommended": {
       "require": "./dist/recommended.js",
-      "import": "./dist/recommended.mjs"
+      "import": "./dist/recommended.mjs",
+      "types": "./dist/recommended.d.ts"
     },
     "./filter-boolean": {
       "require": "./dist/filter-boolean.js",
-      "import": "./dist/filter-boolean.mjs"
+      "import": "./dist/filter-boolean.mjs",
+      "types": "./dist/filter-boolean.d.ts"
     },
     "./is-array": {
       "require": "./dist/is-array.js",
-      "import": "./dist/is-array.mjs"
+      "import": "./dist/is-array.mjs",
+      "types": "./dist/is-array.d.ts"
     },
     "./json-parse": {
       "require": "./dist/json-parse.js",
-      "import": "./dist/json-parse.mjs"
+      "import": "./dist/json-parse.mjs",
+      "types": "./dist/json-parse.d.ts"
     },
     "./fetch": {
       "require": "./dist/fetch.js",
-      "import": "./dist/fetch.mjs"
+      "import": "./dist/fetch.mjs",
+      "types": "./dist/fetch.d.ts"
     }
   },
   "keywords": [],

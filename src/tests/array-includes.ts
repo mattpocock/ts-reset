@@ -58,3 +58,18 @@ doNotExecute(async () => {
     type tests = [Expect<Equal<typeof member, 1 | 2 | 3>>];
   }
 });
+
+doNotExecute(async () => {
+  const arr: Array<"1" | "2" | "3"> = ["1", "2", "3"];
+
+  arr.includes("4");
+
+  arr.includes(
+    // @ts-expect-error
+    2,
+  );
+  arr.includes(
+    // @ts-expect-error
+    true,
+  );
+});

@@ -1,3 +1,9 @@
 .changeset
 src
 lint.js
+build.ts
+pnpm-lock.yaml
+tsconfig.json
+.gitignore
+.github
+.changeset

@@ -5,6 +5,13 @@ interface ReadonlyArray<T> {
   ): searchElement is T;
 }
 
+interface Array<T> {
+  includes(
+    searchElement: T | (TSReset.WidenLiteral<T> & {}),
+    fromIndex?: number,
+  ): searchElement is T;
+}
+
 declare namespace TSReset {
   type WidenLiteral<T> = T extends string
     ? string

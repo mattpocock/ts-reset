@@ -1,6 +1,14 @@
 # `ts-reset`
 
-`ts-reset` acts like a CSS reset for TypeScript. It improves typings for JavaScript API's like `fetch`, `JSON.parse` and `.filter()`, making them safer and smarter.
+Whenever you add TypeScript to a project, you're opting into over tens of thousands of lines of declaration files. These files help describe JavaScript itself - `lib.dom.d.ts` describes the DOM, and `lib.d.ts` describes JavaScript itself.
+
+These typings are not perfect.
+
+- `.json` (in `fetch`) and `JSON.parse` both return `any`
+- `.filter(Boolean)` doesn't behave how you expect
+- `array.includes` often breaks
+
+`ts-reset` smooths over these hard edges, just like a CSS reset does in the browser.
 
 ```ts
 // Import in a single file, then across your whole project...

@@ -2,7 +2,7 @@ interface ReadonlyArray<T> {
   includes(
     searchElement: T | (TSReset.WidenLiteral<T> & {}),
     fromIndex?: number,
-  ): boolean;
+  ): searchElement is T;
 }
 
 declare namespace TSReset {

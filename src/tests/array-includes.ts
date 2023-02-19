@@ -1,4 +1,4 @@
-import { doNotExecute } from "./utils";
+import { doNotExecute, Equal, Expect } from "./utils";
 
 doNotExecute(async () => {
   const arr = ["1", "2", "3"] as const;
@@ -48,4 +48,13 @@ doNotExecute(async () => {
   );
 
   arr.includes({ a: 1 });
+});
+
+doNotExecute(async () => {
+  let arr = [1, 2, 3] as const;
+
+  let member = 1;
+  if (arr.includes(member)) {
+    type tests = [Expect<Equal<typeof member, 1 | 2 | 3>>];
+  }
 });

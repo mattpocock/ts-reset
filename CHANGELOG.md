@@ -1,5 +1,11 @@
 # @total-typescript/ts-reset
 
+## 0.1.4
+
+### Patch Changes
+
+- Fixed exports (finally)
+
 ## 0.1.3
 
 ### Patch Changes

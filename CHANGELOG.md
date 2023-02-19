@@ -1,5 +1,11 @@
 # @total-typescript/ts-reset
 
+## 0.2.1
+
+### Patch Changes
+
+- Readme tweak
+
 ## 0.2.0
 
 ### Minor Changes

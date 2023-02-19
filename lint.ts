@@ -1,12 +1,14 @@
-const fs = require("fs");
-const path = require("path");
+import * as fs from "fs";
+import * as path from "path";
 
 const packageJsonContents = fs.readFileSync(
   path.join(__dirname, "package.json"),
   "utf8",
 );
 
-const packageJson = JSON.parse(packageJsonContents);
+const packageJson = JSON.parse(packageJsonContents) as {
+  exports: Record<string, any>;
+};
 
 const pkgJsonExports = Object.keys(packageJson.exports).filter((entrypoint) => {
   return entrypoint !== "."; // ignore the root entrypoint
@@ -15,7 +17,7 @@ const pkgJsonExports = Object.keys(packageJson.exports).filter((entrypoint) => {
 const entrypointFiles = fs
   .readdirSync(path.join(__dirname, "src/entrypoints"))
   .map((file) => {
-    return file.replace(".ts", "");
+    return file.replace(".d.ts", "");
   });
 
 for (const entrypointFile of entrypointFiles) {

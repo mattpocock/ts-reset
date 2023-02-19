@@ -1,5 +1,11 @@
 # @total-typescript/ts-reset
 
+## 0.3.2
+
+### Patch Changes
+
+- Removed the ability to use Set.has as a type predicate. This ensures that Set.has never sets the checked element to never.
+
 ## 0.3.1
 
 ### Patch Changes

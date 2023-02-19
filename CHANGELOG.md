@@ -1,5 +1,11 @@
 # @total-typescript/ts-reset
 
+## 0.1.2
+
+### Patch Changes
+
+- 4cfb07e: Fixed build process and moved to .d.ts files
+
 ## 0.1.1
 
 ### Patch Changes

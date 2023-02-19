@@ -1,14 +1,19 @@
 # `ts-reset`
 
-Whenever you add TypeScript to a project, you're opting into over tens of thousands of lines of declaration files. These files help describe JavaScript itself - `lib.dom.d.ts` describes the DOM, and `lib.d.ts` describes JavaScript itself.
+Whenever you add TypeScript to a project, you're opting into **tens of thousands of lines of declaration files**. These files help describe JavaScript itself - `lib.dom.d.ts` describes the DOM, and `lib.d.ts` describes JavaScript itself.
 
 These typings are not perfect.
 
 - `.json` (in `fetch`) and `JSON.parse` both return `any`
 - `.filter(Boolean)` doesn't behave how you expect
-- `array.includes` often breaks
+- `array.includes` often breaks on readonly arrays
 
-`ts-reset` smooths over these hard edges, just like a CSS reset does in the browser.
+`ts-reset` smooths over these hard edges, just like a CSS reset does in the browser. You'll be able to:
+
+- Prevent `any` entering your codebase
+- Make methods like `.filter` and `.includes` smarter
+
+## Example
 
 ```ts
 // Import in a single file, then across your whole project...
@@ -39,7 +44,7 @@ import "@total-typescript/ts-reset";
 
 3. Enjoy improved typings across your _entire_ project.
 
-## Installing only certain rules
+### Installing only certain rules
 
 By importing from `@total-typescript/ts-reset`, you're bundling _all_ the recommended rules.
 

@@ -15,39 +15,39 @@
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "default": "./dist/recommended.js",
       "import": "./dist/recommended.mjs",
-      "types": "./dist/recommended.d.ts"
+      "types": "./dist/recommended.d.ts",
+      "default": "./dist/recommended.js"
     },
     "./recommended": {
-      "default": "./dist/recommended.js",
       "import": "./dist/recommended.mjs",
-      "types": "./dist/recommended.d.ts"
+      "types": "./dist/recommended.d.ts",
+      "default": "./dist/recommended.js"
     },
     "./filter-boolean": {
-      "default": "./dist/filter-boolean.js",
       "import": "./dist/filter-boolean.mjs",
-      "types": "./dist/filter-boolean.d.ts"
+      "types": "./dist/filter-boolean.d.ts",
+      "default": "./dist/filter-boolean.js"
     },
     "./is-array": {
-      "default": "./dist/is-array.js",
       "import": "./dist/is-array.mjs",
-      "types": "./dist/is-array.d.ts"
+      "types": "./dist/is-array.d.ts",
+      "default": "./dist/is-array.js"
     },
     "./json-parse": {
-      "default": "./dist/json-parse.js",
       "import": "./dist/json-parse.mjs",
-      "types": "./dist/json-parse.d.ts"
+      "types": "./dist/json-parse.d.ts",
+      "default": "./dist/json-parse.js"
     },
     "./fetch": {
-      "default": "./dist/fetch.js",
       "import": "./dist/fetch.mjs",
-      "types": "./dist/fetch.d.ts"
+      "types": "./dist/fetch.d.ts",
+      "default": "./dist/fetch.js"
     },
     "./array-includes": {
-      "default": "./dist/array-includes.js",
       "import": "./dist/array-includes.mjs",
-      "types": "./dist/array-includes.d.ts"
+      "types": "./dist/array-includes.d.ts",
+      "default": "./dist/array-includes.js"
     }
   },
   "keywords": [],

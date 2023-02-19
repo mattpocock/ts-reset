@@ -1,0 +1,18 @@
+{
+  "name": "any-be-gone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsup",
+    "lint": "tsc"
+  },
+  "keywords": [],
+  "author": "Matt Pocock",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.14.0",
+    "tsup": "^6.6.3",
+    "typescript": "^4.9.5"
+  }
+}

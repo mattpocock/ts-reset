@@ -2,7 +2,6 @@
   "name": "@total-typescript/ts-reset",
   "version": "0.1.2",
   "description": "",
-  "main": "./dist/recommended.js",
   "private": false,
   "scripts": {
     "build": "tsx build.ts",
@@ -12,32 +11,32 @@
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "require": "./dist/recommended.js",
+      "default": "./dist/recommended.js",
       "import": "./dist/recommended.mjs",
       "types": "./dist/recommended.d.ts"
     },
     "./recommended": {
-      "require": "./dist/recommended.js",
+      "default": "./dist/recommended.js",
       "import": "./dist/recommended.mjs",
       "types": "./dist/recommended.d.ts"
     },
     "./filter-boolean": {
-      "require": "./dist/filter-boolean.js",
+      "default": "./dist/filter-boolean.js",
       "import": "./dist/filter-boolean.mjs",
       "types": "./dist/filter-boolean.d.ts"
     },
     "./is-array": {
-      "require": "./dist/is-array.js",
+      "default": "./dist/is-array.js",
       "import": "./dist/is-array.mjs",
       "types": "./dist/is-array.d.ts"
     },
     "./json-parse": {
-      "require": "./dist/json-parse.js",
+      "default": "./dist/json-parse.js",
       "import": "./dist/json-parse.mjs",
       "types": "./dist/json-parse.d.ts"
     },
     "./fetch": {
-      "require": "./dist/fetch.js",
+      "default": "./dist/fetch.js",
       "import": "./dist/fetch.mjs",
       "types": "./dist/fetch.d.ts"
     }

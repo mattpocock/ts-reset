@@ -6,7 +6,7 @@
   "private": false,
   "scripts": {
     "build": "tsx build.ts",
-    "lint": "tsc && tsx lint.js && check-export-map",
+    "lint": "tsc && tsx lint.ts && check-export-map",
     "release": "pnpm run lint && pnpm run build && changeset publish"
   },
   "exports": {

@@ -48,6 +48,11 @@
       "import": "./dist/array-includes.mjs",
       "types": "./dist/array-includes.d.ts",
       "default": "./dist/array-includes.js"
+    },
+    "./set-has": {
+      "import": "./dist/set-has.mjs",
+      "types": "./dist/set-has.d.ts",
+      "default": "./dist/set-has.js"
     }
   },
   "keywords": [],

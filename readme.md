@@ -196,6 +196,35 @@ const isUser = (input: string) => {
 };
 ```
 
+### Make `Set.has()` less strict
+
+```ts
+import "@total-typescript/ts-reset/set-has";
+```
+
+Similar to `.includes`, `Set.has()` doesn't let you pass members that don't exist in the set:
+
+```ts
+// BEFORE
+const userSet = new Set(["matt", "sofia", "waqas"] as const);
+
+// Argument of type '"bryan"' is not assignable to
+// parameter of type '"matt" | "sofia" | "waqas"'.
+userSet.has("bryan");
+```
+
+With the rule enabled, `Set` is much smarter:
+
+```ts
+// AFTER
+import "@total-typescript/ts-reset/set-has";
+
+const userSet = new Set(["matt", "sofia", "waqas"] as const);
+
+// .has now takes a string as the argument!
+userSet.has("bryan");
+```
+
 ### Removing `any[]` from `Array.isArray()`
 
 ```ts

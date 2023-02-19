@@ -42,6 +42,11 @@
       "default": "./dist/fetch.js",
       "import": "./dist/fetch.mjs",
       "types": "./dist/fetch.d.ts"
+    },
+    "./array-includes": {
+      "default": "./dist/array-includes.js",
+      "import": "./dist/array-includes.mjs",
+      "types": "./dist/array-includes.d.ts"
     }
   },
   "keywords": [],

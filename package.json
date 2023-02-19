@@ -53,6 +53,11 @@
       "import": "./dist/set-has.mjs",
       "types": "./dist/set-has.d.ts",
       "default": "./dist/set-has.js"
+    },
+    "./utils": {
+      "import": "./dist/utils.mjs",
+      "types": "./dist/utils.d.ts",
+      "default": "./dist/utils.js"
     }
   },
   "keywords": [],

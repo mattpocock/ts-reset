@@ -1,5 +1,11 @@
 # @total-typescript/ts-reset
 
+## 0.1.3
+
+### Patch Changes
+
+- bb3f2d1: Attempted fix for exports maps
+
 ## 0.1.2
 
 ### Patch Changes

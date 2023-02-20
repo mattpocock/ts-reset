@@ -1,5 +1,11 @@
 # @total-typescript/ts-reset
 
+## 0.3.4
+
+### Patch Changes
+
+- Fixed an issue where dist folder was not deployed.
+
 ## 0.3.3
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@total-typescript/ts-reset",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "description": "A CSS reset for TypeScript, improving types for common JavaScript API's",
   "private": false,
   "repository": "https://github.com/total-typescript/ts-reset",
@@ -66,7 +66,7 @@
   },
   "keywords": [],
   "author": "Matt Pocock",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@changesets/cli": "^2.26.0",
     "@types/node": "^18.14.0",

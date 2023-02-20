@@ -1,5 +1,11 @@
 # @total-typescript/ts-reset
 
+## 0.3.7
+
+### Patch Changes
+
+- Added license and switched to MIT
+
 ## 0.3.6
 
 ### Patch Changes

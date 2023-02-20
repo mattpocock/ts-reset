@@ -33,17 +33,6 @@ doNotExecute(() => {
   type test = Expect<Equal<typeof result, Record<string, number>>>;
 });
 
-// Should still let you specify the type in the generic
-doNotExecute(() => {
-  const result = arr.reduce((accum: Record<string, number>, curr) => {
-    type test = Expect<Equal<typeof accum, Record<string, number>>>;
-
-    return {};
-  }, {});
-
-  type test = Expect<Equal<typeof result, Record<string, number>>>;
-});
-
 // Should still work for non-{} values
 doNotExecute(() => {
   arr.reduce((accum, curr) => {

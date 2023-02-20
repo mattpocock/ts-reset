@@ -1,11 +1,11 @@
 interface Array<T> {
-  reduce<U>(
+  reduce(
     callbackfn: (
-      previousValue: U extends Record<string, never> ? unknown : U,
+      previousValue: unknown,
       currentValue: T,
       currentIndex: number,
       array: T[],
-    ) => U extends Record<string, never> ? unknown : U,
-    initialValue: U,
-  ): U extends Record<string, never> ? unknown : U;
+    ) => unknown,
+    initialValue: Record<string, never>,
+  ): unknown;
 }

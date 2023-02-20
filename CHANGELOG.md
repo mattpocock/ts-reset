@@ -1,5 +1,11 @@
 # @total-typescript/ts-reset
 
+## 0.3.6
+
+### Patch Changes
+
+- d3ddefa: Changed the exports map so "types" appears top
+
 ## 0.3.5
 
 ### Patch Changes

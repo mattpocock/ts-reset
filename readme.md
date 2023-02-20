@@ -256,6 +256,34 @@ const validate = (input: unknown) => {
 };
 ```
 
+### Improve `Omit` util 
+
+```ts
+import "@total-typescript/ts-reset/omit";
+```
+
+When you're using Omit type there's a chance to make a typo in the key name
+
+```ts
+// BEFORE
+interface Obj {
+  key: string;
+}
+
+type R1 = Omit<Obj, 'key2'>; // OK
+```
+
+```ts
+// After
+import "@total-typescript/ts-reset/omit";
+
+interface Obj {
+  key: string;
+}
+
+type R1 = Omit<Obj, 'key2'>; // Type '"key2"' does not satisfy the constraint '"key"'.
+```
+
 ## Rules we won't add
 
 ### `Object.keys`/`Object.entries`

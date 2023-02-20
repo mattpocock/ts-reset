@@ -58,6 +58,11 @@
       "types": "./dist/set-has.d.ts",
       "default": "./dist/set-has.js"
     },
+    "./omit": {
+      "import": "./dist/omit.mjs",
+      "types": "./dist/omit.d.ts",
+      "default": "./dist/omit.js"
+    },
     "./utils": {
       "import": "./dist/utils.mjs",
       "types": "./dist/utils.d.ts",

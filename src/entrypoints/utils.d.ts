@@ -14,4 +14,15 @@ declare namespace TSReset {
     : T extends symbol
     ? symbol
     : T;
+
+  type LowInfer<T> = T & {};
+
+  type Primitive =
+    | string
+    | number
+    | boolean
+    | bigint
+    | symbol
+    | null
+    | undefined;
 }

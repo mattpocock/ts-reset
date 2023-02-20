@@ -9,7 +9,7 @@
     },
     "lint": {},
     "lint-pkg-json": {},
-    "release": {
+    "publish": {
       "dependsOn": ["build", "check-exports", "lint", "lint-pkg-json"],
       "cache": false
     }

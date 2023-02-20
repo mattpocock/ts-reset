@@ -1,5 +1,11 @@
 # @total-typescript/ts-reset
 
+## 0.3.5
+
+### Patch Changes
+
+- Another fix for deploy process.
+
 ## 0.3.4
 
 ### Patch Changes

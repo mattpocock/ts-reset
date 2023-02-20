@@ -278,4 +278,4 @@ const func: Func = () => {
 };
 ```
 
-So, the only reasonable types for `Object.keys` to return is `Array<string>`.
+So, the only reasonable type for `Object.keys` to return is `Array<string>`.

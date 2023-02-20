@@ -255,3 +255,27 @@ const validate = (input: unknown) => {
   }
 };
 ```
+
+## Rules we won't add
+
+### `Object.keys`/`Object.entries`
+
+A common ask is to provide 'better' typings for `Object.keys`, so that it returns `Array<keyof T>` instead of `Array<string>`. Same for `Object.entries`. `ts-reset` won't be including rules to change this.
+
+TypeScript is a structural typing system. One of the effects of this is that TypeScript can't always guarantee that your object types don't contain excess properties:
+
+```ts
+type Func = () => {
+  id: string;
+};
+
+const func: Func = () => {
+  return {
+    id: "123",
+    // No error on an excess property!
+    name: "Hello!",
+  };
+};
+```
+
+So, the only reasonable types for `Object.keys` to return is `Array<string>`.

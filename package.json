@@ -53,6 +53,11 @@
       "import": "./dist/array-includes.mjs",
       "default": "./dist/array-includes.js"
     },
+    "./object-keys": {
+      "types": "./dist/object-keys.d.ts",
+      "import": "./dist/object-keys.mjs",
+      "default": "./dist/object-keys.js"
+    },
     "./set-has": {
       "types": "./dist/set-has.d.ts",
       "import": "./dist/set-has.mjs",

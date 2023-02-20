@@ -5,8 +5,8 @@
   "private": false,
   "repository": "https://github.com/total-typescript/ts-reset",
   "scripts": {
-    "build": "tsx build.ts",
-    "lint": "tsc && tsx lint.ts && check-export-map",
+    "build": "tsx scripts/build.ts",
+    "lint": "tsc && tsx scripts/lint.ts && check-export-map",
     "release": "pnpm run build && pnpm run lint && changeset publish"
   },
   "main": "./dist/recommended.js",

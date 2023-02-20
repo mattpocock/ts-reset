@@ -1,7 +1,6 @@
 .changeset
 src
-lint.js
-build.ts
+scripts
 pnpm-lock.yaml
 tsconfig.json
 .gitignore

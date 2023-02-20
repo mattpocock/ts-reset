@@ -2,7 +2,7 @@ import * as fs from "fs";
 import * as path from "path";
 
 const packageJsonContents = fs.readFileSync(
-  path.join(__dirname, "package.json"),
+  path.join(__dirname, "../", "package.json"),
   "utf8",
 );
 
@@ -15,7 +15,7 @@ const pkgJsonExports = Object.keys(packageJson.exports).filter((entrypoint) => {
 });
 
 const entrypointFiles = fs
-  .readdirSync(path.join(__dirname, "src/entrypoints"))
+  .readdirSync(path.join(__dirname, "../src/entrypoints"))
   .map((file) => {
     return file.replace(".d.ts", "");
   });

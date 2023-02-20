@@ -1,8 +1,8 @@
 import * as fs from "fs/promises";
 import * as path from "path";
 
-const entrypointDir = path.join(__dirname, "src", "entrypoints");
-const distDir = path.join(__dirname, "dist");
+const entrypointDir = path.join(__dirname, "../", "src", "entrypoints");
+const distDir = path.join(__dirname, "../", "dist");
 
 const run = async () => {
   try {

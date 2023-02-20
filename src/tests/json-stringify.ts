@@ -11,6 +11,8 @@ doNotExecute(() => {
 });
 
 doNotExecute(() => {
+  // If the type of the incoming value is `any` we can't assume anything about
+  // it so return the broadest possible type
   const result = JSON.stringify(undefined as any);
   type tests = [Expect<Equal<typeof result, string | undefined>>];
 });

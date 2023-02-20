@@ -1,5 +1,11 @@
 # @total-typescript/ts-reset
 
+## 0.3.3
+
+### Patch Changes
+
+- Fixed a bug where 0n was not being filtered out by filter-boolean
+
 ## 0.3.2
 
 ### Patch Changes

@@ -25,12 +25,13 @@ doNotExecute(() => {
 });
 
 doNotExecute(() => {
-  const arr: (0 | null | undefined | false | "")[] = [
+  const arr: (0 | null | undefined | false | "" | 0n)[] = [
     0,
     null,
     undefined,
     false,
     "",
+    0n,
   ];
 
   const result = arr.filter(Boolean);

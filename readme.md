@@ -279,3 +279,29 @@ const func: Func = () => {
 ```
 
 So, the only reasonable type for `Object.keys` to return is `Array<string>`.
+
+### Generics for `JSON.parse`, `Response.json` etc
+
+A common request is for `ts-reset` to add type arguments to functions like `JSON.parse`:
+
+```ts
+const str = JSON.parse<string>('"hello"');
+
+console.log(str); // string
+```
+
+This appears to improve the DX by giving you autocomplete on the thing that gets returned from `JSON.parse`.
+
+However, we argue that this is a lie to the compiler and so, unsafe.
+
+`JSON.parse` and `fetch` represent _validation boundaries_ - places where unknown data can enter your application code.
+
+If you _really_ know what data is coming back from a `JSON.parse`, then an `as` assertion feels like the right call:
+
+```ts
+const str = JSON.parse('"hello"') as string;
+
+console.log(str); // string
+```
+
+This provides the types you intend and also signals to the developer that this is _slightly_ unsafe.

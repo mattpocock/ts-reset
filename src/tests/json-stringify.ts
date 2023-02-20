@@ -2,7 +2,7 @@ import { doNotExecute, Equal, Expect } from "./utils";
 
 doNotExecute(() => {
   const result = JSON.stringify(undefined);
-  type tests = [Expect<Equal<typeof result, string | undefined>>];
+  type tests = [Expect<Equal<typeof result, undefined>>];
 });
 
 doNotExecute(() => {

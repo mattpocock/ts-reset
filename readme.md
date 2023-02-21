@@ -40,7 +40,7 @@ fetch("/")
 
 ## Get Started
 
-1. Install: `npm i @total-typescript/ts-reset`
+1. Install: `npm i -D @total-typescript/ts-reset`
 
 2. Import **once** into any `.ts` or `.tsx` file:
 

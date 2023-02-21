@@ -1,6 +1,6 @@
 # `ts-reset`
 
-TypeScript's built-in typings are not perfect.
+TypeScript's built-in typings are not perfect. `ts-reset` makes them better.
 
 **Without `ts-reset`**:
 

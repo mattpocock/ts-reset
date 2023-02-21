@@ -1,0 +1,1 @@
+declare function isNaN(num: number | string): boolean;

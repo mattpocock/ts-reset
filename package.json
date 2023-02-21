@@ -58,6 +58,11 @@
       "import": "./dist/set-has.mjs",
       "default": "./dist/set-has.js"
     },
+    "./is-nan": {
+      "types": "./dist/is-nan.d.ts",
+      "import": "./dist/is-nan.mjs",
+      "default": "./dist/is-nan.js"
+    },
     "./utils": {
       "types": "./dist/utils.d.ts",
       "import": "./dist/utils.mjs",

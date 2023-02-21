@@ -53,11 +53,6 @@
       "import": "./dist/array-includes.mjs",
       "default": "./dist/array-includes.js"
     },
-    "./array-isarray": {
-      "types": "./dist/array-isarray.d.ts",
-      "import": "./dist/array-isarray.mjs",
-      "default": "./dist/array-isarray.js"
-    },
     "./set-has": {
       "types": "./dist/set-has.d.ts",
       "import": "./dist/set-has.mjs",

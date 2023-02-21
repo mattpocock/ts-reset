@@ -2,16 +2,17 @@
 
 Whenever you add TypeScript to a project, you're opting into **tens of thousands of lines of declaration files**. These files help describe JavaScript itself - `lib.dom.d.ts` describes the DOM, and `lib.d.ts` describes JavaScript itself.
 
-These typings are not perfect.
+TypeScript's built-in typings are not perfect.
 
 - `.json` (in `fetch`) and `JSON.parse` both return `any`
 - `.filter(Boolean)` doesn't behave how you expect
 - `array.includes` often breaks on readonly arrays
 
-`ts-reset` smooths over these hard edges, just like a CSS reset does in the browser. You'll be able to:
+`ts-reset` smooths over these hard edges, just like a CSS reset does in the browser. In `ts-reset`:
 
-- Prevent `any` entering your codebase
-- Make methods like `.filter` and `.includes` smarter
+- `.json` (in `fetch`) and `JSON.parse` both return `unknown`
+- `.filter(Boolean)` behaves EXACTLY how you expect
+- `array.includes` is widened to be more ergonomic
 
 ## Example
 

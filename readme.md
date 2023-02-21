@@ -1,10 +1,6 @@
 # `ts-reset`
 
-Whenever you add TypeScript to a project, you're opting into **tens of thousands of lines of declaration files**. These files help describe JavaScript itself - `lib.dom.d.ts` describes the DOM, and `lib.d.ts` describes JavaScript itself.
-
 TypeScript's built-in typings are not perfect.
-
-In TypeScript's default types:
 
 - 🚨 `.json` (in `fetch`) and `JSON.parse` both return `any`
 - 🤦 `.filter(Boolean)` doesn't behave how you expect

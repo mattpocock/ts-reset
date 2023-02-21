@@ -196,6 +196,43 @@ const isUser = (input: string) => {
 };
 ```
 
+### Make `Array.isArray` correctly narrow with `ReadonlyArray<Item>`
+
+```ts
+import "@total-typescript/ts-reset/array-includes";
+```
+
+This rule improves on TypeScript's default `Array.isArray` behaviour. Without this rule enabled, TypeScript will not include `ReadonlyArray<Item>` when narrowing Array types.
+
+```ts
+// BEFORE
+function makeArray(input: string | ReadonlyArray<string> | Array<string>) {
+  if (Array.isArray(input)) {
+    return input;
+  }
+  return [input];
+}
+
+type Result = ReturnType<typeof makeArray>; // (string | readonly string[])[]
+```
+
+This is almost definitely not what the user intended! While it works correctly at run-time (since JS has no concept of ReadonlyArray), the inferred types are very incorrect.
+
+```ts
+// AFTER
+import "@total-typescript/ts-reset/array-includes";
+
+function makeArray(input: string | ReadonlyArray<string> | Array<string>) {
+  // Array.isArray now
+  if (Array.isArray(input)) {
+    return input;
+  }
+  return [input];
+}
+
+type Result = ReturnType<typeof makeArray>; // string[]
+```
+
 ### Make `Set.has()` less strict
 
 ```ts

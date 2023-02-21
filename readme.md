@@ -13,6 +13,7 @@ TypeScript's built-in typings are not perfect.
 - `.json` (in `fetch`) and `JSON.parse` both return `unknown`
 - `.filter(Boolean)` behaves EXACTLY how you expect
 - `array.includes` is widened to be more ergonomic
+- And several more changes!
 
 ## Example
 

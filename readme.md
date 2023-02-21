@@ -4,7 +4,7 @@ Whenever you add TypeScript to a project, you're opting into **tens of thousands
 
 These typings are not perfect.
 
-- `.json` (in `fetch`) and `JSON.parse` both return `any`
+- `.json` (in `fetch`) and `JSON.parse` both return `unknown`
 - `.filter(Boolean)` doesn't behave how you expect
 - `array.includes` often breaks on readonly arrays
 

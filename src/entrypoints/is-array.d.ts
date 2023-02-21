@@ -1,3 +1,3 @@
 interface ArrayConstructor {
-  isArray(arg: any): arg is unknown[];
+  isArray(arg: any): arg is ReadonlyArray<unknown> | Array<unknown>;
 }

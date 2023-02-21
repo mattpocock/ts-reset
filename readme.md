@@ -40,7 +40,17 @@ fetch("/")
 
 ## Get Started
 
-1. Install: `npm i @total-typescript/ts-reset`
+### One liner
+
+```sh
+npm i -D @types/ts-reset@npm:@total-typescript/ts-reset
+```
+
+🎉 Typescript will now pick up `ts-reset` if the `typeRoots` config value was not overridden in the project.
+
+### More control and explicity
+
+1. Install: `npm i -D @total-typescript/ts-reset`
 
 2. Import **once** into any `.ts` or `.tsx` file:
 

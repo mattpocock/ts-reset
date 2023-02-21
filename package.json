@@ -1,7 +1,7 @@
 {
   "name": "@total-typescript/ts-reset",
   "version": "0.3.7",
-  "description": "A CSS reset for TypeScript, improving types for common JavaScript API's",
+  "description": "A CSS reset for TypeScript, improving types for common JavaScript APIs",
   "private": false,
   "repository": "https://github.com/total-typescript/ts-reset",
   "scripts": {

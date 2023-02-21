@@ -28,7 +28,7 @@ import "@total-typescript/ts-reset";
 // .filter just got smarter!
 const filteredArray = [1, 2, undefined].filter(Boolean); // number[]
 
-// Get rid of the any's in JSON.parse and fetch
+// Get rid of the anys in JSON.parse and fetch
 const result = JSON.parse("{}"); // unknown
 
 fetch("/")
@@ -80,7 +80,7 @@ Below is a full list of all the rules available.
 import "@total-typescript/ts-reset/json-parse";
 ```
 
-`JSON.parse` returning `any` can cause nasty, subtle bugs. Frankly, any `any`'s can cause bugs because they disable typechecking on the values they describe.
+`JSON.parse` returning `any` can cause nasty, subtle bugs. Frankly, any `any`s can cause bugs because they disable typechecking on the values they describe.
 
 ```ts
 // BEFORE
@@ -102,7 +102,7 @@ const result = JSON.parse("{}"); // unknown
 import "@total-typescript/ts-reset/fetch";
 ```
 
-Just like `JSON.parse`, `.json()` returning `any` introduces unwanted `any`'s into your application code.
+Just like `JSON.parse`, `.json()` returning `any` introduces unwanted `any`s into your application code.
 
 ```ts
 // BEFORE
@@ -237,7 +237,7 @@ userSet.has("bryan");
 import "@total-typescript/ts-reset/is-array";
 ```
 
-When you're using `Array.isArray`, you can introduce subtle `any`'s into your app's code.
+When you're using `Array.isArray`, you can introduce subtle `any`s into your app's code.
 
 ```ts
 // BEFORE

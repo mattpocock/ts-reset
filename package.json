@@ -58,6 +58,11 @@
       "import": "./dist/set-has.mjs",
       "default": "./dist/set-has.js"
     },
+    "./boolean-predicate": {
+      "types": "./dist/boolean-predicate.d.ts",
+      "import": "./dist/boolean-predicate.mjs",
+      "default": "./dist/boolean-predicate.js"
+    },
     "./utils": {
       "types": "./dist/utils.d.ts",
       "import": "./dist/utils.mjs",

@@ -260,6 +260,41 @@ const validate = (input: unknown) => {
 };
 ```
 
+### Boolean(val) is now also a predicate
+
+```ts
+import "@total-typescript/ts-reset/boolean-predicate";
+```
+
+When you're using `Boolean(val)`, Typescript doesn't understand it as a predicate on `val`.
+
+```ts
+// BEFORE
+
+const getUserName = (user?: User) => {
+  const isUser = Boolean(user);
+  if (isUser) {
+    console.log(user.name); // error: user is possibly undefined
+  }
+};
+```
+
+With this rule enabled, `Boolean(val)` is now also a type predicate. This means you can use it to narrow types:
+
+```ts
+// AFTER
+import "@total-typescript/ts-reset/is-array";
+
+const getUserName = (user?: User) => {
+  const isUser = Boolean(user);
+  if (isUser) {
+    console.log(user.name); // ✅
+  }
+};
+```
+
+> **Caveat:** Since the constructor typing is unchanged, this can only work for the cases where `Boolean(val)` is used explicitly, and not for `.filter(Boolean)`. For that, you'll need to use `filter-boolean`.
+
 ## Rules we won't add
 
 ### `Object.keys`/`Object.entries`

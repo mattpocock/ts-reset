@@ -262,7 +262,7 @@ const validate = (input: unknown) => {
 import "@total-typescript/ts-reset/array-includes";
 ```
 
-This rule improves on TypeScript's default `Array.isArray` behaviour. Without this rule enabled, TypeScript will not include `ReadonlyArray<Item>` when narrowing Array types.
+This rule improves on TypeScript's default `Array.isArray` behaviour. With this rule enabled, TypeScript will now include `ReadonlyArray<Item>` when narrowing Array types.
 
 ```ts
 // BEFORE

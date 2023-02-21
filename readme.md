@@ -4,16 +4,20 @@ Whenever you add TypeScript to a project, you're opting into **tens of thousands
 
 TypeScript's built-in typings are not perfect.
 
-- `.json` (in `fetch`) and `JSON.parse` both return `any`
-- `.filter(Boolean)` doesn't behave how you expect
-- `array.includes` often breaks on readonly arrays
+In TypeScript's default types:
 
-`ts-reset` smooths over these hard edges, just like a CSS reset does in the browser. In `ts-reset`:
+- 🚨 `.json` (in `fetch`) and `JSON.parse` both return `any`
+- 🤦 `.filter(Boolean)` doesn't behave how you expect
+- 😡 `array.includes` often breaks on readonly arrays
 
-- `.json` (in `fetch`) and `JSON.parse` both return `unknown`
-- `.filter(Boolean)` behaves EXACTLY how you expect
-- `array.includes` is widened to be more ergonomic
-- And several more changes!
+`ts-reset` smooths over these hard edges, just like a CSS reset does in the browser.
+
+With `ts-reset`:
+
+- 👍 `.json` (in `fetch`) and `JSON.parse` both return `unknown`
+- ✅ `.filter(Boolean)` behaves EXACTLY how you expect
+- 🥹 `array.includes` is widened to be more ergonomic
+- 🚀 And several more changes!
 
 ## Example
 

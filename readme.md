@@ -260,6 +260,30 @@ const validate = (input: unknown) => {
 };
 ```
 
+### Make `Object.assign()` know that it's added values to the target
+
+```ts
+import "@total-typescript/ts-reset/object-assign";
+```
+
+This rule improves on the `Object.assign` method, and asserts that the target is both the target and the source.
+
+```ts
+// BEFORE
+
+const obj = { a: 0, b: 1 };
+Object.assign(obj, { c: 2 });
+someFunc(obj.c); // Property 'c' does not exist on type '{ a: number; b: number; }'
+```
+
+```ts
+// AFTER
+
+const obj = { a: 0, b: 1 };
+Object.assign(obj, { c: 2 });
+someFunc(obj.c); // It knows that 'c' has been added.
+```
+
 ## Rules we won't add
 
 ### `Object.keys`/`Object.entries`

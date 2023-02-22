@@ -40,7 +40,7 @@ fetch("/")
 
 1. Install: `npm i -D @total-typescript/ts-reset`
 
-2. Import **once** into any `.ts` or `.tsx` file:
+2. Create a `reset.d.ts` file in your project with these contents:
 
 ```ts
 import "@total-typescript/ts-reset";

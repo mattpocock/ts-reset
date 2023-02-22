@@ -62,6 +62,8 @@ import "@total-typescript/ts-reset/json-parse";
 import "@total-typescript/ts-reset/fetch";
 ```
 
+For these imports to work, you'll need to ensure that, in your `tsconfig.json`, `module` is set to `NodeNext` or `Node16`.
+
 Below is a full list of all the rules available.
 
 ## Caveats

@@ -1,3 +1,4 @@
 interface ArrayConstructor {
-  isArray<T>(arg: T | T[]): arg is T[] extends T ? T[] : any[] 
+  // @ts-ignore
+  isArray<T>(arg: T[] extends T ? T | T[] : never): arg is unknown[];
 }

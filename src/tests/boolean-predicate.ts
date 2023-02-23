@@ -1,4 +1,4 @@
-import { doNotExecute, Equal, Expect } from "./utils";
+import { doNotExecute, Equal, NotEqual, Expect } from "./utils";
 
 doNotExecute(() => {
   let obj: { foo: "bar" } | undefined;
@@ -36,4 +36,28 @@ doNotExecute(() => {
   const result = Boolean(obj);
 
   type test = Expect<Equal<typeof result, boolean>>;
+});
+
+doNotExecute(() => {
+  let obj = {} as any[];
+
+  const result = Boolean(obj);
+
+  type tests = [
+    Expect<Equal<typeof result, boolean>>,
+    Expect<Equal<typeof obj, any[]>>,
+    Expect<NotEqual<typeof obj, unknown[]>>
+  ];
+});
+
+doNotExecute(() => {
+  let obj = {} as unknown[];
+
+  const result = Boolean(obj);
+
+  type tests = [
+    Expect<Equal<typeof result, boolean>>,
+    Expect<Equal<typeof obj, unknown[]>>,
+    Expect<NotEqual<typeof obj, any[]>>
+  ];
 });

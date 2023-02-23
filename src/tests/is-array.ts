@@ -20,7 +20,7 @@ doNotExecute(() => {
   const maybeArr = [1, 2, 3] as any;
 
   if (Array.isArray(maybeArr)) {
-    type tests = [Expect<Equal<typeof maybeArr, unknown[]>>];
+    type tests = [Expect<Equal<typeof maybeArr, any[]>>];
   }
 });
 
@@ -28,7 +28,7 @@ doNotExecute(() => {
   const maybeArr = [1, 2, 3] as any[];
 
   if (Array.isArray(maybeArr)) {
-    type tests = [Expect<Equal<typeof maybeArr, unknown[]>>];
+    type tests = [Expect<Equal<typeof maybeArr, any[]>>];
   }
 });
 

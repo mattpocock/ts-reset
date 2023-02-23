@@ -5,3 +5,12 @@ doNotExecute(async () => {
 
   type tests = [Expect<Equal<typeof result, unknown>>];
 });
+
+doNotExecute(async () => {
+  // Make tests fail when someone tries to PR res.json<T>
+
+  const result = await fetch("/").then((res) => {
+    // @ts-expect-error
+    return res.json<string>();
+  });
+});

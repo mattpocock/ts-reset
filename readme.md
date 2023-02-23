@@ -1,17 +1,21 @@
 # `ts-reset`
 
-Whenever you add TypeScript to a project, you're opting into **tens of thousands of lines of declaration files**. These files help describe JavaScript itself - `lib.dom.d.ts` describes the DOM, and `lib.d.ts` describes JavaScript itself.
+TypeScript's built-in typings are not perfect. `ts-reset` makes them better.
 
-These typings are not perfect.
+**Without `ts-reset`**:
 
-- `.json` (in `fetch`) and `JSON.parse` both return `any`
-- `.filter(Boolean)` doesn't behave how you expect
-- `array.includes` often breaks on readonly arrays
+- 🚨 `.json` (in `fetch`) and `JSON.parse` both return `any`
+- 🤦 `.filter(Boolean)` doesn't behave how you expect
+- 😡 `array.includes` often breaks on readonly arrays
 
-`ts-reset` smooths over these hard edges, just like a CSS reset does in the browser. You'll be able to:
+`ts-reset` smooths over these hard edges, just like a CSS reset does in the browser.
 
-- Prevent `any` entering your codebase
-- Make methods like `.filter` and `.includes` smarter
+**With `ts-reset`**:
+
+- 👍 `.json` (in `fetch`) and `JSON.parse` both return `unknown`
+- ✅ `.filter(Boolean)` behaves EXACTLY how you expect
+- 🥹 `array.includes` is widened to be more ergonomic
+- 🚀 And several more changes!
 
 ## Example
 
@@ -34,9 +38,9 @@ fetch("/")
 
 ## Get Started
 
-1. Install: `npm i @total-typescript/ts-reset`
+1. Install: `npm i -D @total-typescript/ts-reset`
 
-2. Import **once** into any `.ts` or `.tsx` file:
+2. Create a `reset.d.ts` file in your project with these contents:
 
 ```ts
 import "@total-typescript/ts-reset";
@@ -57,6 +61,8 @@ import "@total-typescript/ts-reset/json-parse";
 // Makes await fetch().then(res => res.json()) return unknown
 import "@total-typescript/ts-reset/fetch";
 ```
+
+For these imports to work, you'll need to ensure that, in your `tsconfig.json`, `module` is set to `NodeNext` or `Node16`.
 
 Below is a full list of all the rules available.
 

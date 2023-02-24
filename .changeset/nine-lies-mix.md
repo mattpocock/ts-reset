@@ -1,5 +1,5 @@
 ---
-"@total-typescript/ts-reset": minor
+"@total-typescript/ts-reset": patch
 ---
 
-Adds widened has support to ReadonlySet
+Fixed an oversight with the initial `set-has` implementation by adding support to `ReadonlySet`.

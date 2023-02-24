@@ -73,3 +73,12 @@ doNotExecute(async () => {
     true,
   );
 });
+
+doNotExecute(async () => {
+  const arr: Array<1 | 2 | 3> = [1, 2, 3];
+
+  let member = 4 as 3 | 4;
+  if (arr.includes(member)) {
+    type tests = [Expect<Equal<typeof member, 3 | 4>>];
+  }
+});

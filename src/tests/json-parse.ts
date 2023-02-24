@@ -7,8 +7,9 @@ doNotExecute(() => {
 });
 
 doNotExecute(() => {
-  // Make tests fail when someone tries to PR JSON.parse<T>
+  type Named = { name: string };
 
-  // @ts-expect-error
-  const result = JSON.parse<string>("{}");
+  const result = JSON.parse<Named>("{ name: 'ts-reset' }");
+
+  type tests = [Expect<Equal<typeof result, Named>>];
 });

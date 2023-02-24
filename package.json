@@ -62,6 +62,11 @@
       "types": "./dist/utils.d.ts",
       "import": "./dist/utils.mjs",
       "default": "./dist/utils.js"
+    },
+    "./array-constructor": {
+      "import": "./dist/array-constructor.mjs",
+      "types": "./dist/array-constructor.d.ts",
+      "default": "./dist/array-constructor.js"
     }
   },
   "keywords": [],

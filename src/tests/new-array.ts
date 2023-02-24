@@ -1,14 +1,22 @@
 import { doNotExecute, Equal, Expect } from "./utils";
 
-// check that new array is inferred correctly to unknown[]
 doNotExecute(() => {
+  // check that new array is inferred correctly to unknown[]
   const unknownArr = new Array();
 
   type tests = [Expect<Equal<typeof unknownArr, unknown[]>>];
 });
 
 doNotExecute(() => {
-  // appears to be any[] instead of unknown[]
-  // const alsoUnkownArr = [];
-  // type tests = [Expect<Equal<typeof alsoUnkownArr, unknown[]>>];
+  // array with length property
+  const unknownArr = new Array(10);
+
+  type tests = [Expect<Equal<typeof unknownArr, unknown[]>>];
+});
+
+doNotExecute(() => {
+  // array with items
+  const numberArray = new Array(1, 2);
+
+  type tests = [Expect<Equal<typeof numberArray, number[]>>];
 });

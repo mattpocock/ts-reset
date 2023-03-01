@@ -9,12 +9,12 @@ doNotExecute(async () => {
 });
 
 doNotExecute(async () => {
-  const string: "A" | "B" = "A";
+  const string = "A" as "A" | "B";
 
   const lowerCaseString = string.toLowerCase();
 
   type tests = [
-    Expect<Equal<Lowercase<typeof string>, typeof lowerCaseString>>
+    Expect<Equal<typeof lowerCaseString, "a" | "b">>
   ];
 });
 

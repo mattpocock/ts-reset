@@ -23,7 +23,7 @@ doNotExecute(() => {
 });
 
 doNotExecute(() => {
-  const value: null | string | number | boolean | object | Array<any> = null;
+  const value = null as null | string | number | boolean | object | any[];
   const result = JSON.stringify(value);
   type tests = [Expect<Equal<typeof result, string>>];
 });

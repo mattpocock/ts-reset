@@ -5,7 +5,11 @@ interface JSON {
    * @param replacer (Not Used)
    * @param space (Not Used)
    */
-  stringify(value: undefined, replacer?: any, space?: any): undefined;
+  stringify(
+    value: undefined | ((...args: any[]) => any),
+    replacer?: any,
+    space?: any,
+  ): undefined;
   /**
    * Converts a JavaScript value to a JavaScript Object Notation (JSON) string.
    * @param value A JavaScript value, usually an object or array, to be converted.
@@ -15,8 +19,12 @@ interface JSON {
   stringify<T = any>(
     value: T,
     replacer?: (this: any, key: string, value: any) => any,
-    space?: string | number
-  ): undefined extends T ? string | undefined : string;
+    space?: string | number,
+  ): undefined extends T
+    ? string | undefined
+    : ((...args: any[]) => any) extends T
+    ? string | undefined
+    : string;
   /**
    * Converts a JavaScript value to a JavaScript Object Notation (JSON) string.
    * @param value A JavaScript value, usually an object or array, to be converted.
@@ -26,6 +34,10 @@ interface JSON {
   stringify<T = any>(
     value: T,
     replacer?: (number | string)[] | null,
-    space?: string | number
-  ): undefined extends T ? string | undefined : string;
+    space?: string | number,
+  ): undefined extends T
+    ? string | undefined
+    : ((...args: any[]) => any) extends T
+    ? string | undefined
+    : string;
 }

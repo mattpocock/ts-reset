@@ -262,6 +262,33 @@ const validate = (input: unknown) => {
 };
 ```
 
+### Make `.at()` on `as const` arrays more smart
+
+```ts
+import "@total-typescript/ts-reset/array-at";
+```
+
+When you're using `.at()` on a tuple, you lose the specificity of your array's type
+
+```ts
+// BEFORE
+
+const array = [false, 1, "2"] as const
+const first = array.at(0) // false | 1 | "2" | undefined
+const last = array.at(-1) // false | 1 | "2" | undefined
+```
+
+With `array-at` enabled, you keep the type of the specific index you're accessing:
+
+```ts
+// AFTER
+import "@total-typescript/ts-reset/array-at";
+
+const array = [false, 1, "2"] as const
+const first = array.at(0) // false
+const last = array.at(-1) // "2"
+```
+
 ## Rules we won't add
 
 ### `Object.keys`/`Object.entries`

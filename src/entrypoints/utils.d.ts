@@ -14,4 +14,16 @@ declare namespace TSReset {
     : T extends symbol
     ? symbol
     : T;
+
+  type Length<T extends any[]> = T extends { length: infer L }
+    ? L
+    : never
+
+  type BuildTuple<L extends number, T extends any[] = []> = T extends { length: L }
+    ? T
+    : BuildTuple<L, [...T, any]>
+  
+  type Subtract<A extends number, B extends number> = BuildTuple<A> extends [...(infer U), ...BuildTuple<B>]
+    ? Length<U>
+    : never
 }

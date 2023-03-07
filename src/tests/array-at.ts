@@ -29,3 +29,14 @@ doNotExecute(async () => {
     Expect<Equal<typeof d, undefined>>,
   ]
 });
+
+doNotExecute(async () => {
+  const arr = [false, 1, '2'] as const;
+  const index: number = 1
+  const a = arr.at(index)
+  // WARN: with `"strictNullChecks": true,` the correct type here should include `undefined`
+  // but the current implementation does not type this as including `undefined`
+  type tests = [
+    Expect<Equal<typeof a, false | 1 | "2">>,
+  ]
+});

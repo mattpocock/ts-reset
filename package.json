@@ -67,6 +67,11 @@
       "types": "./dist/utils.d.ts",
       "import": "./dist/utils.mjs",
       "default": "./dist/utils.js"
+    },
+    "./array-index-of": {
+      "types": "./dist/array-index-of.d.ts",
+      "import": "./dist/array-index-of.mjs",
+      "default": "./dist/array-index-of.js"
     }
   },
   "keywords": [],

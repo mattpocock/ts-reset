@@ -188,6 +188,14 @@ users.includes("bryan");
 
 This means you can test non-members of the array safely.
 
+### Make `.indexOf` on `as const` arrays less strict
+
+```ts
+import "@total-typescript/ts-reset/array-index-of";
+```
+
+Exactly the same behaviour of `.includes` (explained above), but for `.lastIndexOf` and `.indexOf`.
+
 ### Make `Set.has()` less strict
 
 ```ts

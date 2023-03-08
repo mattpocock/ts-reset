@@ -1,5 +1,11 @@
 # @total-typescript/ts-reset
 
+## 0.4.1
+
+### Patch Changes
+
+- No changes, just pushing to fix the previous slightly borked release.
+
 ## 0.4.0
 
 ### Minor Changes

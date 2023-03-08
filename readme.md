@@ -263,6 +263,20 @@ const validate = (input: unknown) => {
 };
 ```
 
+### Make `new Array()` return `unknown[]`
+
+With `new Array()` you can introduce `any`'s into your code:
+
+```ts
+import "@total-typescript/ts-reset/new-array";
+
+const arr = new Array(); // unknown[]
+
+const arr2 = new Array(10); // length is 10, but the type is unknown[]
+
+const inferred = new Array(1, 2, 3); // number[]
+```
+
 ## Rules we won't add
 
 ### `Object.keys`/`Object.entries`

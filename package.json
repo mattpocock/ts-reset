@@ -62,6 +62,11 @@
       "types": "./dist/utils.d.ts",
       "import": "./dist/utils.mjs",
       "default": "./dist/utils.js"
+    },
+    "./new-array": {
+      "types": "./dist/new-array.d.ts",
+      "import": "./dist/new-array.mjs",
+      "default": "./dist/new-array.js"
     }
   },
   "keywords": [],

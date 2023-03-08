@@ -188,21 +188,6 @@ users.includes("bryan");
 
 This means you can test non-members of the array safely.
 
-It also makes `.includes` a type predicate, meaning you can use it to narrow wider types to a set enum:
-
-```ts
-import "@total-typescript/ts-reset/array-includes";
-
-const users = ["matt", "sofia", "waqas"] as const;
-
-const isUser = (input: string) => {
-  if (users.includes(input)) {
-    // input is narrowed to "matt" | "sofia" | "waqas"
-    console.log(input);
-  }
-};
-```
-
 ### Make `Set.has()` less strict
 
 ```ts

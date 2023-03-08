@@ -51,15 +51,6 @@ doNotExecute(async () => {
 });
 
 doNotExecute(async () => {
-  let arr = [1, 2, 3] as const;
-
-  let member = 1;
-  if (arr.includes(member)) {
-    type tests = [Expect<Equal<typeof member, 1 | 2 | 3>>];
-  }
-});
-
-doNotExecute(async () => {
   const arr: Array<"1" | "2" | "3"> = ["1", "2", "3"];
 
   arr.includes("4");

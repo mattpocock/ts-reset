@@ -48,6 +48,11 @@
       "import": "./dist/fetch.mjs",
       "default": "./dist/fetch.js"
     },
+    "./array-at": {
+      "types": "./dist/array-at.d.ts",
+      "import": "./dist/array-at.mjs",
+      "default": "./dist/array-at.js"
+    },
     "./array-includes": {
       "types": "./dist/array-includes.d.ts",
       "import": "./dist/array-includes.mjs",

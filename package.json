@@ -58,6 +58,11 @@
       "import": "./dist/set-has.mjs",
       "default": "./dist/set-has.js"
     },
+    "./map-has": {
+      "types": "./dist/map-has.d.ts",
+      "import": "./dist/map-has.mjs",
+      "default": "./dist/map-has.js"
+    },
     "./utils": {
       "types": "./dist/utils.d.ts",
       "import": "./dist/utils.mjs",

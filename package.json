@@ -28,6 +28,26 @@
       "import": "./dist/recommended.mjs",
       "default": "./dist/recommended.js"
     },
+    "./utils": {
+      "types": "./dist/utils.d.ts",
+      "import": "./dist/utils.mjs",
+      "default": "./dist/utils.js"
+    },
+    "./array-includes": {
+      "types": "./dist/array-includes.d.ts",
+      "import": "./dist/array-includes.mjs",
+      "default": "./dist/array-includes.js"
+    },
+    "./array-index-of": {
+      "types": "./dist/array-index-of.d.ts",
+      "import": "./dist/array-index-of.mjs",
+      "default": "./dist/array-index-of.js"
+    },
+    "./fetch": {
+      "types": "./dist/fetch.d.ts",
+      "import": "./dist/fetch.mjs",
+      "default": "./dist/fetch.js"
+    },
     "./filter-boolean": {
       "types": "./dist/filter-boolean.d.ts",
       "import": "./dist/filter-boolean.mjs",
@@ -43,35 +63,15 @@
       "import": "./dist/json-parse.mjs",
       "default": "./dist/json-parse.js"
     },
-    "./fetch": {
-      "types": "./dist/fetch.d.ts",
-      "import": "./dist/fetch.mjs",
-      "default": "./dist/fetch.js"
-    },
-    "./array-includes": {
-      "types": "./dist/array-includes.d.ts",
-      "import": "./dist/array-includes.mjs",
-      "default": "./dist/array-includes.js"
-    },
-    "./set-has": {
-      "types": "./dist/set-has.d.ts",
-      "import": "./dist/set-has.mjs",
-      "default": "./dist/set-has.js"
-    },
     "./map-has": {
       "types": "./dist/map-has.d.ts",
       "import": "./dist/map-has.mjs",
       "default": "./dist/map-has.js"
     },
-    "./utils": {
-      "types": "./dist/utils.d.ts",
-      "import": "./dist/utils.mjs",
-      "default": "./dist/utils.js"
-    },
-    "./array-index-of": {
-      "types": "./dist/array-index-of.d.ts",
-      "import": "./dist/array-index-of.mjs",
-      "default": "./dist/array-index-of.js"
+    "./set-has": {
+      "types": "./dist/set-has.d.ts",
+      "import": "./dist/set-has.mjs",
+      "default": "./dist/set-has.js"
     }
   },
   "keywords": [],

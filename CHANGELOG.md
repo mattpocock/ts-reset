@@ -1,5 +1,77 @@
 # @total-typescript/ts-reset
 
+## 0.4.1
+
+### Patch Changes
+
+- No changes, just pushing to fix the previous slightly borked release.
+
+## 0.4.0
+
+### Minor Changes
+
+- ce9db42: Added support for widening in `Array.lastIndexOf`, `Array.indexOf`, `ReadonlyArray.lastIndexOf` and `ReadonlyArray.indexOf`.
+- 107dfc2: Changed the array.includes on readonly arrays to NOT be a type predicate. Before this change, this perfectly valid code would not behave correctly.
+
+  ```ts
+  type Code = 0 | 1 | 2;
+  type SpecificCode = 0 | 1;
+
+  const currentCode: Code = 0;
+
+  // Create an empty list of subset type
+  const specificCodeList: ReadonlyArray<SpecificCode> = [];
+
+  // This will be false, since 0 is not in []
+  if (specificCodeList.includes(currentCode)) {
+    currentCode; // -> SpecificCode
+  } else {
+    // This branch will be entered, and ts will think z is 2, when it is actually 0
+    currentCode; // -> 2
+  }
+  ```
+
+  Removing the type predicate brings ts-reset closer towards correctness.
+
+- 4765413: author: @mefechoel
+
+  Added the `Map.has` rule.
+
+  Similar to `.includes` or `Set.has()`, `Map.has()` doesn't let you pass members that don't exist in the map's keys:
+
+  ```ts
+  // BEFORE
+  const userMap = new Map([
+    ["matt", 0],
+    ["sofia", 1],
+    [2, "waqas"],
+  ] as const);
+
+  // Argument of type '"bryan"' is not assignable to
+  // parameter of type '"matt" | "sofia" | "waqas"'.
+  userMap.has("bryan");
+  ```
+
+  With the rule enabled, `Map` follows the same semantics as `Set`.
+
+  ```ts
+  // AFTER
+  import "@total-typescript/ts-reset/map-has";
+
+  const userMap = new Map([
+    ["matt", 0],
+    ["sofia", 1],
+    [2, "waqas"],
+  ] as const);
+
+  // .has now takes a string as the argument!
+  userMap.has("bryan");
+  ```
+
+### Patch Changes
+
+- b15aaa4: Fixed an oversight with the initial `set-has` implementation by adding support to `ReadonlySet`.
+
 ## 0.3.7
 
 ### Patch Changes

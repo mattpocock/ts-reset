@@ -43,6 +43,7 @@ fetch("/")
 2. Create a `reset.d.ts` file in your project with these contents:
 
 ```ts
+// Do not add any other lines of code to this file!
 import "@total-typescript/ts-reset";
 ```
 
@@ -187,20 +188,13 @@ users.includes("bryan");
 
 This means you can test non-members of the array safely.
 
-It also makes `.includes` a type predicate, meaning you can use it to narrow wider types to a set enum:
+### Make `.indexOf` on `as const` arrays less strict
 
 ```ts
-import "@total-typescript/ts-reset/array-includes";
-
-const users = ["matt", "sofia", "waqas"] as const;
-
-const isUser = (input: string) => {
-  if (users.includes(input)) {
-    // input is narrowed to "matt" | "sofia" | "waqas"
-    console.log(input);
-  }
-};
+import "@total-typescript/ts-reset/array-index-of";
 ```
+
+Exactly the same behaviour of `.includes` (explained above), but for `.lastIndexOf` and `.indexOf`.
 
 ### Make `Set.has()` less strict
 
@@ -229,6 +223,43 @@ const userSet = new Set(["matt", "sofia", "waqas"] as const);
 
 // .has now takes a string as the argument!
 userSet.has("bryan");
+```
+
+### Make `Map.has()` less strict
+
+```ts
+import "@total-typescript/ts-reset/map-has";
+```
+
+Similar to `.includes` or `Set.has()`, `Map.has()` doesn't let you pass members that don't exist in the map's keys:
+
+```ts
+// BEFORE
+const userMap = new Map([
+  ["matt", 0],
+  ["sofia", 1],
+  [2, "waqas"],
+] as const);
+
+// Argument of type '"bryan"' is not assignable to
+// parameter of type '"matt" | "sofia" | "waqas"'.
+userMap.has("bryan");
+```
+
+With the rule enabled, `Map` follows the same semantics as `Set`.
+
+```ts
+// AFTER
+import "@total-typescript/ts-reset/map-has";
+
+const userMap = new Map([
+  ["matt", 0],
+  ["sofia", 1],
+  [2, "waqas"],
+] as const);
+
+// .has now takes a string as the argument!
+userMap.has("bryan");
 ```
 
 ### Removing `any[]` from `Array.isArray()`

@@ -4,7 +4,7 @@ interface ReadonlyArray<T> {
   includes(
     searchElement: T | (TSReset.WidenLiteral<T> & {}),
     fromIndex?: number,
-  ): searchElement is T;
+  ): boolean;
 }
 
 interface Array<T> {

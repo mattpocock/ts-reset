@@ -72,6 +72,11 @@
       "types": "./dist/array-index-of.d.ts",
       "import": "./dist/array-index-of.mjs",
       "default": "./dist/array-index-of.js"
+    },
+    "./promise-catch": {
+      "types": "./dist/promise-catch.d.ts",
+      "import": "./dist/promise-catch.mjs",
+      "default": "./dist/promise-catch.js"
     }
   },
   "keywords": [],

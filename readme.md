@@ -293,6 +293,40 @@ const validate = (input: unknown) => {
 };
 ```
 
+### Making Number.isFinite assert number
+
+Currently `Number.isFinite` makes no assertion at the TypeScript level that the passed value is a number, even though it does actually assert this:
+
+```ts
+// BEFORE
+import "@total-typescript/ts-reset/is-finite";
+
+const validate = (input: unknown) => {
+    if (Number.isFinite(input)) {
+        console.log(input); // unknown
+    }
+
+    // the workaround
+    if (typeof input === "number" && Number.isFinite(input)) {
+        console.log(input); // number
+    }
+}
+```
+
+With `is-finite` enabled, this now happens as you would expect:
+
+```ts
+// AFTER
+import "@total-typescript/ts-reset/is-finite";
+
+const validate = (input: unknown) => {
+    // yay!
+    if (Number.isFinite(input)) {
+        console.log(input); // number
+    }
+}
+```
+
 ## Rules we won't add
 
 ### `Object.keys`/`Object.entries`

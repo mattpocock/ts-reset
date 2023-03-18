@@ -72,6 +72,11 @@
       "types": "./dist/array-index-of.d.ts",
       "import": "./dist/array-index-of.mjs",
       "default": "./dist/array-index-of.js"
+    },
+    "./is-finite": {
+      "types": "./dist/is-finite.d.ts",
+      "import": "./dist/is-finite.mjs",
+      "default": "./dist/is-finite.js"
     }
   },
   "keywords": [],

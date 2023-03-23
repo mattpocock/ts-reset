@@ -12,7 +12,7 @@ TypeScript's built-in typings are not perfect. `ts-reset` makes them better.
 
 **With `ts-reset`**:
 
-- 👍 `.json` (in `fetch`) and `JSON.parse` both return `unknown`
+- 👍 `.json` (in `fetch`) and `JSON.parse` both return `JsonValue`
 - ✅ `.filter(Boolean)` behaves EXACTLY how you expect
 - 🥹 `array.includes` is widened to be more ergonomic
 - 🚀 And several more changes!
@@ -27,12 +27,12 @@ import "@total-typescript/ts-reset";
 const filteredArray = [1, 2, undefined].filter(Boolean); // number[]
 
 // Get rid of the any's in JSON.parse and fetch
-const result = JSON.parse("{}"); // unknown
+const result = JSON.parse("{}"); // JsonValue
 
 fetch("/")
   .then((res) => res.json())
   .then((json) => {
-    console.log(json); // unknown
+    console.log(json); // JsonValue
   });
 ```
 
@@ -56,10 +56,10 @@ By importing from `@total-typescript/ts-reset`, you're bundling _all_ the recomm
 To only import the rules you want, you can import like so:
 
 ```ts
-// Makes JSON.parse return unknown
+// Makes JSON.parse return JsonValue
 import "@total-typescript/ts-reset/json-parse";
 
-// Makes await fetch().then(res => res.json()) return unknown
+// Makes await fetch().then(res => res.json()) return JsonValue
 import "@total-typescript/ts-reset/fetch";
 ```
 
@@ -75,7 +75,7 @@ Below is a full list of all the rules available.
 
 ## Rules
 
-### Make `JSON.parse` return `unknown`
+### Make `JSON.parse` return `JsonValue`
 
 ```ts
 import "@total-typescript/ts-reset/json-parse";
@@ -88,16 +88,16 @@ import "@total-typescript/ts-reset/json-parse";
 const result = JSON.parse("{}"); // any
 ```
 
-By changing the result of `JSON.parse` to `unknown`, we're now forced to either validate the `unknown` to ensure it's the correct type (perhaps using [`zod`](https://github.com/colinhacks/zod)), or cast it with `as`.
+By changing the result of `JSON.parse` to `JsonValue`, we're now forced to either validate the `JsonValue` to ensure it's the correct type (perhaps using [`zod`](https://github.com/colinhacks/zod)), or cast it with `as`.
 
 ```ts
 // AFTER
 import "@total-typescript/ts-reset/json-parse";
 
-const result = JSON.parse("{}"); // unknown
+const result = JSON.parse("{}"); // JsonValue
 ```
 
-### Make `.json()` return `unknown`
+### Make `.json()` return `JsonValue`
 
 ```ts
 import "@total-typescript/ts-reset/fetch";
@@ -114,7 +114,7 @@ fetch("/")
   });
 ```
 
-By forcing `res.json` to return `unknown`, we're encouraged to distrust its results, making us more likely to validate the results of `fetch`.
+By forcing `res.json` to return `JsonValue`, we're encouraged to distrust its results, making us more likely to validate the results of `fetch`.
 
 ```ts
 // AFTER
@@ -123,7 +123,7 @@ import "@total-typescript/ts-reset/fetch";
 fetch("/")
   .then((res) => res.json())
   .then((json) => {
-    console.log(json); // unknown
+    console.log(json); // JsonValue
   });
 ```
 

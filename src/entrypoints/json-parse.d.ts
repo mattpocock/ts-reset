@@ -1,4 +1,4 @@
-/// <reference path="utils.d.ts" />
+/// <reference path="json.d.ts" />
 
 interface JSON {
   /**

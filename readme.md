@@ -42,10 +42,10 @@ fetch("/")
 
 2. Create a `reset.d.ts` file in your project with these contents:
 
-```ts
-// Do not add any other lines of code to this file!
-import "@total-typescript/ts-reset";
-```
+   ```ts
+   // Do not add any other lines of code to this file!
+   import "@total-typescript/ts-reset";
+   ```
 
 3. Enjoy improved typings across your _entire_ project.
 

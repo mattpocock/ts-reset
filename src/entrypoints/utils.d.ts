@@ -1,4 +1,8 @@
 declare namespace TSReset {
+  type JsonValue = string | number | boolean | JsonValue[] | JsonObject | null;
+
+  type JsonObject = { [key: string]: JsonValue };
+
   type NonFalsy<T> = T extends false | 0 | "" | null | undefined | 0n
     ? never
     : T;

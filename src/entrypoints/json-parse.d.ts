@@ -1,3 +1,5 @@
+/// <reference path="utils.d.ts" />
+
 interface JSON {
   /**
    * Converts a JavaScript Object Notation (JSON) string into an object.
@@ -8,5 +10,5 @@ interface JSON {
   parse(
     text: string,
     reviver?: (this: any, key: string, value: any) => any,
-  ): unknown;
+  ): TSReset.JsonValue;
 }

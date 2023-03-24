@@ -10,4 +10,6 @@ declare namespace TSReset {
   type JsonObject = { [key: string]: JsonValue };
 
   type JsonHolder<K extends string, A> = Record<K, JsonValueF<A>>;
+
+  type ToJson<A> = A extends { toJSON(...args: unknown[]): infer T } ? T : A;
 }

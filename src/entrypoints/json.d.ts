@@ -3,11 +3,11 @@ declare namespace TSReset {
 
   type JsonComposite<A> = Record<string, A> | A[];
 
-  type JsonAlgebra<A> = JsonPrimitive | JsonComposite<A>;
+  type JsonValueF<A> = JsonPrimitive | JsonComposite<A>;
 
   type JsonValue = JsonPrimitive | JsonObject | JsonValue[];
 
   type JsonObject = { [key: string]: JsonValue };
 
-  type JsonHolder<K extends string, A> = Record<K, JsonAlgebra<A>>;
+  type JsonHolder<K extends string, A> = Record<K, JsonValueF<A>>;
 }

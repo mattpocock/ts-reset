@@ -52,7 +52,7 @@ doNotExecute(() => {
 });
 
 doNotExecute(() => {
-  type JsonValueWithMap = TSReset.JsonAlgebra<
+  type JsonValueWithMap = TSReset.JsonValueF<
     TSReset.JsonValue | Map<number, string>
   >;
 

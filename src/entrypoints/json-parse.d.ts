@@ -18,7 +18,7 @@ interface JSON {
     reviver: <K extends string>(
       this: TSReset.JsonHolder<K, A>,
       key: K,
-      value: TSReset.JsonAlgebra<A>,
+      value: TSReset.JsonValueF<A>,
     ) => A,
   ): A;
 }

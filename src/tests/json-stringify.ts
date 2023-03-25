@@ -8,7 +8,7 @@ const importantDates = new Map([
     new Date("1859-11-24"),
   ],
   [
-    'Karl Marx publishes the first volume of his book "Das Kaptial"',
+    'Karl Marx publishes the first volume of his book "Das Kapital"',
     new Date("1867-09-14"),
   ],
   [
@@ -20,7 +20,7 @@ const importantDates = new Map([
     new Date("1930-03-12"),
   ],
   [
-    'Martin Luther King Jr. delivers his "I have a dream" speech',
+    'Martin Luther King Jr. delivers his famous "I have a dream" speech',
     new Date("1963-08-28"),
   ],
   [

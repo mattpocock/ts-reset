@@ -1,3 +1,5 @@
+/// <reference path="json.d.ts" />
+
 interface Body {
-  json(): Promise<unknown>;
+  json(): Promise<TSReset.JsonValue>;
 }

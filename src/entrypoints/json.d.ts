@@ -11,5 +11,17 @@ declare namespace TSReset {
 
   type JsonHolder<K extends string, A> = Record<K, JsonValueF<A>>;
 
-  type ToJson<A> = A extends { toJSON(...args: unknown[]): infer T } ? T : A;
+  type ToJson<A> = A extends { toJSON(...args: any): infer T } ? T : A;
+
+  type SomeExtends<A, B> = A extends B ? undefined : never;
+
+  type SomeFunction = (...args: any) => any;
+
+  type SomeConstructor = new (...args: any) => any;
+
+  type UndefinedDomain = symbol | SomeFunction | SomeConstructor | undefined;
+
+  type StringifyValue<A> = A extends UndefinedDomain ? undefined : string;
+
+  type StringifyResult<A> = StringifyValue<A> | SomeExtends<UndefinedDomain, A>;
 }

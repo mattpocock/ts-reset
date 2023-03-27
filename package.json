@@ -72,6 +72,11 @@
       "types": "./dist/array-index-of.d.ts",
       "import": "./dist/array-index-of.mjs",
       "default": "./dist/array-index-of.js"
+    },
+    "./object-keys": {
+      "types": "./dist/object-keys.d.ts",
+      "import": "./dist/object-keys.mjs",
+      "default": "./dist/object-keys.js"
     }
   },
   "keywords": [],

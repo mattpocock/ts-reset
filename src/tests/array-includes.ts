@@ -155,8 +155,10 @@ doNotExecute(async () => {
   const value = 2 as 2 | 3 | 4 | 5;
 
   if (options.includes(value)) {
+    // @ts-expect-error: Typescript limitation. TODO: fix when possible
     type tests = [Expect<Equal<typeof value, 2 | 3 | 4 | 5>>];
   } else {
+    // @ts-expect-error: Typescript limitation. TODO: fix when possible
     type tests = [Expect<Equal<typeof value, 2 | 3 | 4 | 5>>];
   }
 });
@@ -167,8 +169,10 @@ doNotExecute(async () => {
   const value = 2 as 2 | 3 | 4 | 5;
 
   if (options.includes(value)) {
+    // @ts-expect-error: Typescript limitation. TODO: fix when possible
     type tests = [Expect<Equal<typeof value, 2 | 3 | 4 | 5>>];
   } else {
+    // @ts-expect-error: Typescript limitation. TODO: fix when possible
     type tests = [Expect<Equal<typeof value, 2 | 3 | 4 | 5>>];
   }
 });

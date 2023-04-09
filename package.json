@@ -72,6 +72,11 @@
       "types": "./dist/array-index-of.d.ts",
       "import": "./dist/array-index-of.mjs",
       "default": "./dist/array-index-of.js"
+    },
+    "./array-map": {
+      "types": "./dist/array-map.d.ts",
+      "import": "./dist/array-map.mjs",
+      "default": "./dist/array-map.js"
     }
   },
   "keywords": [],

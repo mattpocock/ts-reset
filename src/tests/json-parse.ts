@@ -1,9 +1,10 @@
 import { doNotExecute, Equal, Expect } from "./utils";
+import { JsonValue } from "../json-types";
 
 doNotExecute(() => {
   const result = JSON.parse("{}");
 
-  type tests = [Expect<Equal<typeof result, unknown>>];
+  type tests = [Expect<Equal<typeof result, JsonValue>>];
 });
 
 doNotExecute(() => {

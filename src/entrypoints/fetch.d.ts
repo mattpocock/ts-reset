@@ -1,3 +1,3 @@
 interface Body {
-  json(): Promise<unknown>;
+  json(): Promise<import("../json-types").JsonValue>;
 }

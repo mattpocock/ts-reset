@@ -7,7 +7,7 @@ TypeScript's built-in typings are not perfect. `ts-reset` makes them better.
 - 🚨 `.json` (in `fetch`) and `JSON.parse` both return `any`
 - 🤦 `.filter(Boolean)` doesn't behave how you expect
 - 😡 `array.includes` often breaks on readonly arrays
-- 😭 `array.map` on a tuple looses the tuple length
+- 😭 `array.map` on a tuple loses the tuple length
 
 `ts-reset` smooths over these hard edges, just like a CSS reset does in the browser.
 
@@ -300,7 +300,7 @@ const validate = (input: unknown) => {
 import "@total-typescript/ts-reset/array-map";
 ```
 
-When you're using `Array.map` with a tuple, the length is lost. This means you loose the guard against accessing an item out of bounds.
+When you're using `Array.map` with a tuple, the length is lost. This means you lose the guard against accessing an item out of bounds.
 
 ```ts
 // BEFORE

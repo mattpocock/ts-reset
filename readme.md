@@ -309,7 +309,7 @@ const tuple = [1, 2, 3] as const;
 const mapped = tuple.map((a) => a + 1);
 
 // oops. There's no 4th element, but no error
-console.log(tuple[3]);
+console.log(mapped[3]);
 ```
 
 With `array-map` enabled, this code will now error:
@@ -322,7 +322,7 @@ const tuple = [1, 2, 3] as const;
 const mapped = tuple.map((a) => a + 1);
 
 // Tuple type 'readonly [number, number, number]' of length '3' has no element at index '3'.
-console.log(tuple[3]);
+console.log(mapped[3]);
 ```
 
 ## Rules we won't add

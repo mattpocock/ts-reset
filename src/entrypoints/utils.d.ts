@@ -3,15 +3,19 @@ declare namespace TSReset {
     ? never
     : T;
 
-  type WidenLiteral<T> = T extends string
-    ? string
-    : T extends number
-    ? number
-    : T extends boolean
-    ? boolean
-    : T extends bigint
-    ? bigint
-    : T extends symbol
-    ? symbol
-    : T;
+  type Primitive =
+    | string
+    | number
+    | boolean
+    | bigint
+    | symbol
+
+  type Join<Lower, Upper>
+    = Upper extends Upper
+    ? Lower extends Upper
+    ? Upper
+    : never
+    : never
+
+  type WidenLiteral<T> = T extends Primitive ? Join<T, Primitive> : T
 }

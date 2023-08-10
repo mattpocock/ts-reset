@@ -40,3 +40,28 @@ doNotExecute(async () => {
     >
   >;
 });
+
+doNotExecute(async () => {
+  const arr = [1, "2", { a: 3 }, []];
+
+  const newArr = arr.fill(2, 0);
+
+  // @ts-expect-error
+  type Test = Expect<Equal<typeof newArr, typeof arr>>;
+});
+
+doNotExecute(async () => {
+  const arr = [1, "2", { a: 3 }, []];
+
+  const newArr = arr.fill(2, 0);
+
+  type Test = Expect<Equal<typeof newArr, number[]>>;
+});
+
+doNotExecute(async () => {
+  const arr = ["2", { a: 3 }, []];
+
+  const newArr = arr.fill(2, 1);
+
+  type Test = Expect<Equal<typeof newArr, (number | (typeof arr)[number])[]>>;
+});

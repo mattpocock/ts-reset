@@ -72,6 +72,16 @@
       "types": "./dist/array-index-of.d.ts",
       "import": "./dist/array-index-of.mjs",
       "default": "./dist/array-index-of.js"
+    },
+    "./dom": {
+      "types": "./dist/dom.d.ts",
+      "import": "./dist/dom.mjs",
+      "default": "./dist/dom.js"
+    },
+    "./storage": {
+      "types": "./dist/storage.d.ts",
+      "import": "./dist/storage.mjs",
+      "default": "./dist/storage.js"
     }
   },
   "keywords": [],

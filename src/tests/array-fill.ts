@@ -2,14 +2,14 @@ import { doNotExecute, Equal, Expect } from "./utils";
 
 // TODO: Add tests that check the type overrides for the fill method once they are implemented
 
-doNotExecute(async () => {
+doNotExecute(() => {
   const arr = [] as const;
 
   // @ts-expect-error
   arr.fill(2);
 });
 
-doNotExecute(async () => {
+doNotExecute(() => {
   const arr = [1, "2", { a: 3 }, []];
 
   const newArr = arr.fill(2);
@@ -18,7 +18,7 @@ doNotExecute(async () => {
   type Test = Expect<Equal<typeof newArr, typeof arr>>;
 });
 
-doNotExecute(async () => {
+doNotExecute(() => {
   const arr = [1, "2", { a: 3 }, []];
 
   const newArr = arr.fill(2);
@@ -26,7 +26,7 @@ doNotExecute(async () => {
   type Test = Expect<Equal<typeof newArr, number[]>>;
 });
 
-doNotExecute(async () => {
+doNotExecute(() => {
   const arr = [1, "2", { a: 3 }, []];
 
   const newArr = arr.fill({ b: 1 } as const);
@@ -41,7 +41,7 @@ doNotExecute(async () => {
   >;
 });
 
-doNotExecute(async () => {
+doNotExecute(() => {
   const arr = [1, "2", { a: 3 }, []];
 
   const newArr = arr.fill(2, 0);
@@ -50,7 +50,7 @@ doNotExecute(async () => {
   type Test = Expect<Equal<typeof newArr, typeof arr>>;
 });
 
-doNotExecute(async () => {
+doNotExecute(() => {
   const arr = [1, "2", { a: 3 }, []];
 
   const newArr = arr.fill(2, 0);
@@ -58,7 +58,7 @@ doNotExecute(async () => {
   type Test = Expect<Equal<typeof newArr, number[]>>;
 });
 
-doNotExecute(async () => {
+doNotExecute(() => {
   const arr = ["2", { a: 3 }, []];
 
   const newArr = arr.fill(2, 1);

@@ -36,6 +36,19 @@ fetch("/")
   });
 ```
 
+### DOM Example
+
+```ts
+// Import from /dom to get DOM rules too!
+import "@total-typescript/ts-reset/dom";
+
+// localStorage just got safer!
+localStorage.abc; // unknown
+
+// sessionStorage just got safer!
+sessionStorage.abc; // unknown
+```
+
 ## Get Started
 
 1. Install: `npm i -D @total-typescript/ts-reset`
@@ -291,6 +304,27 @@ const validate = (input: unknown) => {
     console.log(input); // unknown[]
   }
 };
+```
+
+### Making `sessionStorage` and `localStorage` safer
+
+By default, `localStorage` and `sessionStorage` let you access any key, and return `any`:
+
+```ts
+// BEFORE
+
+// No error!
+localStorage.a.b.c.ohDear; // any
+```
+
+With this rule enabled, these keys now get typed as `unknown`:
+
+```ts
+// AFTER
+import "@total-typescript/ts-reset/storage";
+
+// Error!
+localStorage.a.b.c.ohDear;
 ```
 
 ## Rules we won't add

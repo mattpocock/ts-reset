@@ -22,9 +22,10 @@ const entrypointFiles = readdirRecursive.sync(root).map((file) => {
 });
 
 for (const entrypointFile of entrypointFiles) {
-  if (!pkgJsonExports.includes(`./${entrypointFile}`)) {
+  const unixBasedEntrypointFile = entrypointFile.replace(/\\/g, "/");
+  if (!pkgJsonExports.includes(`./${unixBasedEntrypointFile}`)) {
     console.error(
-      `Missing export file in package.json for ./src/entrypoints/${entrypointFile}.ts`,
+      `Missing export file in package.json for ./src/entrypoints/${unixBasedEntrypointFile}.ts`,
     );
 
     process.exit(1);

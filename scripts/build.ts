@@ -62,19 +62,23 @@ const run = async () => {
       // };
       exportedDirectories.add(finalDir);
     }
+
+    promises.push(
       fs.writeFile(path.join(distDir, `${entrypointBase}.js`), ""),
       fs.writeFile(path.join(distDir, `${entrypointBase}.mjs`), ""),
       fs.copyFile(
-        path.join(entrypointDir, entrypoint),
-        path.join(distDir, `${entrypointBase}.d.ts`),
+        path.resolve(entrypointDir, entrypoint),
+        path.resolve(distDir, `${entrypointBase}.d.ts`),
       ),
-    ]);
+    );
 
     // exports[`./${unixBasedEntrypointBase}`] = {
     //   types: `./dist/${unixBasedEntrypointBase}.d.ts`,
     //   import: `./dist/${unixBasedEntrypointBase}.mjs`,
     //   default: `./dist/${unixBasedEntrypointBase}.js`,
     // };
+
+    await Promise.all(promises);
   }
 
   // pkgJson.exports = exports as typeof pkgJson.exports;

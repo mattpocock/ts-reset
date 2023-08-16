@@ -35,9 +35,9 @@ const run = async () => {
     await Promise.all([
 
       // exports[`./${path.dirname(unixBasedEntrypointBase)}`] = {
-      //   types: `./dist/index.d.ts`,
-      //   import: `./dist/index.mjs`,
-      //   default: `./dist/index.js`,
+      //   types: `./dist/${path.dirname(unixBasedEntrypointBase)}/index.d.ts`,
+      //   import: `./dist/${path.dirname(unixBasedEntrypointBase)}/index.mjs`,
+      //   default: `./dist/${path.dirname(unixBasedEntrypointBase)}/index.js`,
       // };
       fs.writeFile(path.join(distDir, `${entrypointBase}.js`), ""),
       fs.writeFile(path.join(distDir, `${entrypointBase}.mjs`), ""),

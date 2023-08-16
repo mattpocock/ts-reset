@@ -124,5 +124,6 @@
     "singleQuote": false,
     "tabWidth": 2,
     "useTabs": false
-  }
+  },
+  "packageManager": "pnpm@7.33.6"
 }

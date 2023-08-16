@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "resolveJsonModule": true /* Enable importing .json files */,
     "target": "ES2020" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
     "module": "commonjs" /* Specify what module code is generated. */,
     "noEmit": true /* Disable emitting files from a compilation. */,

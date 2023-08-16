@@ -34,13 +34,34 @@ const run = async () => {
     const finalDir = path.dirname(finalFilePath);
     const promises: Promise<unknown>[] = [];
 
-    await Promise.all([
+    if (!exportedDirectories.has(finalDir) && finalDir !== distDir) {
+      await fs.mkdir(finalDir, { recursive: true });
+      const files = await fs.readdir(
+        path.join(entrypointDir, path.dirname(entrypoint)),
+      );
+
+      promises.push(
+        fs.writeFile(
+          path.join(finalDir, "index.d.ts"),
+          files.map((file) => `/// <reference path="./${file}" />`).join("\n"),
+        ),
+        fs.writeFile(
+          path.join(finalDir, "index.js"),
+          files.map((file) => `require("./${file}");`).join("\n"),
+        ),
+        fs.writeFile(
+          path.join(finalDir, "index.mjs"),
+          files.map((file) => `import "./${file}";`).join("\n"),
+        ),
+      );
 
       // exports[`./${path.dirname(unixBasedEntrypointBase)}`] = {
       //   types: `./dist/${path.dirname(unixBasedEntrypointBase)}/index.d.ts`,
       //   import: `./dist/${path.dirname(unixBasedEntrypointBase)}/index.mjs`,
       //   default: `./dist/${path.dirname(unixBasedEntrypointBase)}/index.js`,
       // };
+      exportedDirectories.add(finalDir);
+    }
       fs.writeFile(path.join(distDir, `${entrypointBase}.js`), ""),
       fs.writeFile(path.join(distDir, `${entrypointBase}.mjs`), ""),
       fs.copyFile(

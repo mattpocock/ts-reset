@@ -2,6 +2,8 @@ import * as fs from "fs/promises";
 import * as path from "path";
 // import pkgJson from "../package.json";
 
+import { readdirRecursive } from "./util";
+
 // interface Export {
 //   types: string;
 //   import: string;
@@ -25,8 +27,7 @@ const run = async () => {
   try {
     await fs.mkdir(distDir);
   } catch (e) {}
-
-  const entrypoints = await fs.readdir(entrypointDir);
+  const entrypoints = await readdirRecursive(entrypointDir);
   const exportedDirectories = new Set<string>();
 
   for (const entrypoint of entrypoints) {

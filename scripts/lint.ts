@@ -1,6 +1,8 @@
 import * as fs from "fs";
 import * as path from "path";
 
+import { readdirRecursive } from "./util";
+
 const packageJsonContents = fs.readFileSync(
   path.join(__dirname, "../", "package.json"),
   "utf8",
@@ -14,11 +16,10 @@ const pkgJsonExports = Object.keys(packageJson.exports).filter((entrypoint) => {
   return entrypoint !== "."; // ignore the root entrypoint
 });
 
-const entrypointFiles = fs
-  .readdirSync(path.join(__dirname, "../src/entrypoints"))
-  .map((file) => {
-    return file.replace(".d.ts", "");
-  });
+const root = path.join(__dirname, "../src/entrypoints");
+const entrypointFiles = readdirRecursive.sync(root).map((file) => {
+  return file.replace(path.join(root, "/"), "").replace(".d.ts", "");
+});
 
 for (const entrypointFile of entrypointFiles) {
   if (!pkgJsonExports.includes(`./${entrypointFile}`)) {

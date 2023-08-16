@@ -18,7 +18,7 @@ const pkgJsonExports = Object.keys(packageJson.exports).filter((entrypoint) => {
 
 const root = path.join(__dirname, "../src/entrypoints");
 const entrypointFiles = readdirRecursive.sync(root).map((file) => {
-  return file.replace(path.join(root, "/"), "").replace(".d.ts", "");
+  return file.replace(".d.ts", "");
 });
 
 for (const entrypointFile of entrypointFiles) {

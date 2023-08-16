@@ -1,3 +1,3 @@
 interface Body {
-  json<T = unknown>(): Promise<T>;
+  json(): Promise<unknown>;
 }

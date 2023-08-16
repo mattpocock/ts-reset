@@ -30,6 +30,9 @@ const run = async () => {
   for (const entrypoint of entrypoints) {
     const entrypointBase = entrypoint.replace(".d.ts", "");
     // const unixBasedEntrypointBase = entrypointBase.replace(/[\\/]/g, "/");
+    const finalFilePath = path.resolve(distDir, entrypointBase);
+    const finalDir = path.dirname(finalFilePath);
+    const promises: Promise<unknown>[] = [];
 
     await Promise.all([
 

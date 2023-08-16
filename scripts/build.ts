@@ -24,9 +24,6 @@ const distDir = path.join(__dirname, "../", "dist");
 // };
 
 const run = async () => {
-  try {
-    await fs.mkdir(distDir);
-  } catch (e) {}
   const entrypoints = await readdirRecursive(entrypointDir);
   const exportedDirectories = new Set<string>();
 

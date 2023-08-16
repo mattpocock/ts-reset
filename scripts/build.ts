@@ -27,6 +27,7 @@ const run = async () => {
   } catch (e) {}
 
   const entrypoints = await fs.readdir(entrypointDir);
+  const exportedDirectories = new Set<string>();
 
   for (const entrypoint of entrypoints) {
     const entrypointBase = entrypoint.replace(".d.ts", "");

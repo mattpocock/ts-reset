@@ -1,5 +1,11 @@
 # @total-typescript/ts-reset
 
+## 0.5.1
+
+### Patch Changes
+
+- Added homepage for npm purposes.
+
 ## 0.5.0
 
 ### Minor Changes

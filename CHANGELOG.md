@@ -1,5 +1,21 @@
 # @total-typescript/ts-reset
 
+## 0.5.0
+
+### Minor Changes
+
+- 49b8603: Added a rule, `/session`, to make sessionStorage and localStorage safer.
+
+  ```ts
+  // Is now typed as `unknown`, not `any`!
+  localStorage.a;
+
+  // Is now typed as `unknown`, not `any`!
+  sessionStorage.abc;
+  ```
+
+- 49b8603: Added a `/dom` entrypoint to allow users to import DOM-only rules.
+
 ## 0.4.1
 
 ### Patch Changes

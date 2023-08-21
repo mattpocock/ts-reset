@@ -32,6 +32,32 @@ doNotExecute(async () => {
 
 doNotExecute(async () => {
   const arr = [false, 1, '2'] as const;
+
+  function index() {
+    return Math.random() > 0.5 ? 0 : 1
+  }
+
+  const a = arr.at(index())
+  type tests = [
+    Expect<Equal<typeof a, false | 1>>,
+  ]
+});
+
+doNotExecute(async () => {
+  const arr = [false, true, 1, '2'] as const;
+
+  function index() {
+    return Math.random() > 0.5 ? -1 : -2
+  }
+
+  const a = arr.at(index())
+  type tests = [
+    Expect<Equal<typeof a, '2' | 1>>,
+  ]
+});
+
+doNotExecute(async () => {
+  const arr = [false, 1, '2'] as const;
   const index = 1 as number
   const a = arr.at(index)
   type tests = [

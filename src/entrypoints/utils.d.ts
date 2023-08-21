@@ -21,6 +21,7 @@ declare namespace TSReset {
     ? T
     : BuildTuple<L, [...T, unknown]>;
 
+  // Extra `A extends number` and `B extends number` needed for union types to work Such as Subtract<10 | 20, 1>
   type Subtract<A extends number, B extends number> = A extends number
     ? B extends number
       ? BuildTuple<A> extends [...infer U, ...BuildTuple<B>]

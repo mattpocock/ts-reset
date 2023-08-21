@@ -11,10 +11,8 @@ interface ReadonlyArray<T> {
   ): TSReset.Equal<I, number> extends true
     ? T | undefined
     : `${I}` extends `-${infer J extends number}`
-    ? TSReset.Subtract<this["length"], J> extends infer K extends number
-      ? [K] extends [never]
-        ? undefined
-        : this[K]
-      : undefined
+    ? `${TSReset.Subtract<this["length"], J>}` extends `-${number}`
+      ? undefined
+      : this[TSReset.Subtract<this["length"], J>]
     : this[I];
 }

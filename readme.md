@@ -1,6 +1,4 @@
-# `ts-reset`
-
-TypeScript's built-in typings are not perfect. `ts-reset` makes them better.
+![](./og-image.png)
 
 **Without `ts-reset`**:
 

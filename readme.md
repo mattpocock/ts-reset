@@ -1,4 +1,4 @@
-![](./og-image.png)
+![TS Reset - Improved TypeScript's Built-in Typings](./og-image.png)
 
 **Without `ts-reset`**:
 

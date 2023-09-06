@@ -83,6 +83,11 @@
       "types": "./dist/storage.d.ts",
       "import": "./dist/storage.mjs",
       "default": "./dist/storage.js"
+    },
+    "./object-entries": {
+      "types": "./dist/object-entries.d.ts",
+      "import": "./dist/object-entries.mjs",
+      "default": "./dist/object-entries.js"
     }
   },
   "keywords": [],

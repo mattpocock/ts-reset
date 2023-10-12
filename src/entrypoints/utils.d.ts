@@ -1,5 +1,5 @@
 declare namespace TSReset {
-  type NonFalsy<T> = T extends false | 0 | "" | null | undefined | 0n
+  type NonFalsy<T> = T extends false | 0 | "" | null | undefined | void | 0n
     ? never
     : T;
 

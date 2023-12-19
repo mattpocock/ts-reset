@@ -1,10 +1,10 @@
 /// <reference path="utils.d.ts" />
 
 interface Array<T> {
-  every<U>(
+  every(
     predicate: BooleanConstructor,
     thisArg?: any,
-  ): this is this extends U[]
+  ): this is this extends T[]
     ? TSReset.NonFalsy<T>[]
     : this[number] extends TSReset.NonFalsy<T>
     ? this
@@ -12,10 +12,10 @@ interface Array<T> {
 }
 
 interface ReadonlyArray<T> {
-  every<U>(
+  every(
     predicate: BooleanConstructor,
     thisArg?: any,
-  ): this is this extends U[]
+  ): this is this extends T[]
     ? TSReset.NonFalsy<T>[]
     : this[number] extends TSReset.NonFalsy<T>
     ? this

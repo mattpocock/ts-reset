@@ -5,5 +5,8 @@ interface Array<T> {
 }
 
 interface ReadonlyArray<T> {
-  filter(predicate: BooleanConstructor, thisArg?: any): TSReset.NonFalsy<T>[];
+  filter(
+    predicate: BooleanConstructor,
+    thisArg?: any,
+  ): TSReset.FilterNonFalsy<this>;
 }

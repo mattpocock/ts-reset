@@ -1,9 +1,10 @@
 {
   "name": "@total-typescript/ts-reset",
-  "version": "0.3.7",
+  "version": "0.5.1",
   "description": "A CSS reset for TypeScript, improving types for common JavaScript API's",
   "private": false,
   "repository": "https://github.com/total-typescript/ts-reset",
+  "homepage": "https://totaltypescript.com/ts-reset",
   "scripts": {
     "build": "tsx scripts/build.ts",
     "ci": "turbo build check-exports lint lint-pkg-json",
@@ -58,10 +59,30 @@
       "import": "./dist/set-has.mjs",
       "default": "./dist/set-has.js"
     },
+    "./map-has": {
+      "types": "./dist/map-has.d.ts",
+      "import": "./dist/map-has.mjs",
+      "default": "./dist/map-has.js"
+    },
     "./utils": {
       "types": "./dist/utils.d.ts",
       "import": "./dist/utils.mjs",
       "default": "./dist/utils.js"
+    },
+    "./array-index-of": {
+      "types": "./dist/array-index-of.d.ts",
+      "import": "./dist/array-index-of.mjs",
+      "default": "./dist/array-index-of.js"
+    },
+    "./dom": {
+      "types": "./dist/dom.d.ts",
+      "import": "./dist/dom.mjs",
+      "default": "./dist/dom.js"
+    },
+    "./storage": {
+      "types": "./dist/storage.d.ts",
+      "import": "./dist/storage.mjs",
+      "default": "./dist/storage.js"
     }
   },
   "keywords": [],

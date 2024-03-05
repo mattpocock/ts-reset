@@ -83,6 +83,11 @@
       "types": "./dist/storage.d.ts",
       "import": "./dist/storage.mjs",
       "default": "./dist/storage.js"
+    },
+    "./date-get-day": {
+      "types": "./dist/date-get-day.d.ts",
+      "import": "./dist/date-get-day.mjs",
+      "default": "./dist/date-get-day.js"
     }
   },
   "keywords": [],

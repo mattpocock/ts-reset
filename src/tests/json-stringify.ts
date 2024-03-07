@@ -42,6 +42,13 @@ doNotExecute(() => {
 });
 
 doNotExecute(() => {
+  // create a something that is a function
+  const result = JSON.stringify(function (hello: any, world: any) {});
+
+  type tests = [Expect<Equal<typeof result, undefined>>];
+});
+
+doNotExecute(() => {
   // create a something that is of type any
   let toBeStringified: any;
   const result = JSON.stringify(toBeStringified);

@@ -10,7 +10,7 @@ interface JSON {
     replacer?: (this: any, key: string, value: any) => any,
     space?: string | number,
   ): T extends {} | null
-    ? T extends () => void
+    ? T extends (..._: any) => void
       ? undefined
       : string
     : T extends undefined
@@ -27,7 +27,7 @@ interface JSON {
     replacer?: (number | string)[] | null,
     space?: string | number,
   ): T extends {} | null
-    ? T extends () => void
+    ? T extends (..._: any) => void
       ? undefined
       : string
     : T extends undefined

@@ -25,12 +25,20 @@ doNotExecute(() => {
 
   type tests = [Expect<Equal<typeof result, string>>];
 });
+
 doNotExecute(() => {
   // create a something that is either an object or undefined
   let toBeStringified: {} | undefined = Math.random() > 0.5 ? {} : undefined;
   const result = JSON.stringify(toBeStringified);
 
   type tests = [Expect<Equal<typeof result, string | undefined>>];
+});
+
+doNotExecute(() => {
+  // create a something that is a function
+  const result = JSON.stringify(function () {});
+
+  type tests = [Expect<Equal<typeof result, undefined>>];
 });
 
 doNotExecute(() => {

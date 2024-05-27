@@ -15,3 +15,11 @@ doNotExecute(() => {
     type tests = [Expect<Equal<typeof arrOrString, string[]>>];
   }
 });
+
+doNotExecute(() => {
+  let path: string | string[] = [];
+
+  const paths = Array.isArray(path) ? path : [path];
+
+  type tests = [Expect<Equal<typeof paths, string[]>>];
+});

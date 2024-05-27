@@ -7,3 +7,4 @@
 /// <reference path="map-constructor.d.ts" />
 /// <reference path="map-has.d.ts" />
 /// <reference path="array-index-of.d.ts" />
+/// <reference path="promise-catch.d.ts" />

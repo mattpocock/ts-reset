@@ -8,12 +8,13 @@
   "scripts": {
     "dev": "tsc --watch",
     "build": "tsx scripts/build.ts",
-    "ci": "turbo build check-exports lint lint-pkg-json",
+    "ci": "turbo build check-exports lint lint-pkg-json format:check",
     "check-exports": "check-export-map",
     "lint": "tsc",
     "lint-pkg-json": "tsx scripts/lint.ts",
     "release": "turbo run publish",
     "publish": "changeset publish",
+    "format:check": "prettier  \"./src/**/**.ts\" --check",
     "format": "prettier --write \"./src/**/**.ts\" --write"
   },
   "main": "./dist/recommended.js",

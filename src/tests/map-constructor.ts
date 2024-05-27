@@ -1,61 +1,61 @@
-import {doNotExecute, Equal, Expect} from "./utils";
+import { doNotExecute, Equal, Expect } from "./utils";
 
 doNotExecute(() => {
-    const map = new Map();
+  const map = new Map();
 
-    const result = map.get('foo');
+  const result = map.get("foo");
 
-    type test = [Expect<Equal<typeof result, unknown>>];
+  type test = [Expect<Equal<typeof result, unknown>>];
 });
 
 doNotExecute(() => {
-    const map = new Map();
+  const map = new Map();
 
-    map.set('Jessie', {phone: '213-555-1234', address: '123 N 1st Ave'});
+  map.set("Jessie", { phone: "213-555-1234", address: "123 N 1st Ave" });
 
-    const result = map.has('Jessie');
+  const result = map.has("Jessie");
 
-    type test = [Expect<Equal<typeof result, boolean>>];
+  type test = [Expect<Equal<typeof result, boolean>>];
 });
 
 doNotExecute(() => {
-    const map = new Map();
+  const map = new Map();
 
-    map.set('Jessie', {phone: '213-555-1234', address: '123 N 1st Ave'});
+  map.set("Jessie", { phone: "213-555-1234", address: "123 N 1st Ave" });
 
-    const result = map.get('Jessie');
+  const result = map.get("Jessie");
 
-    type test = [Expect<Equal<typeof result, unknown>>];
+  type test = [Expect<Equal<typeof result, unknown>>];
 });
 
 doNotExecute(() => {
-    const map = new Map();
+  const map = new Map();
 
-    map.set('Jessie', {phone: '213-555-1234', address: '123 N 1st Ave'});
+  map.set("Jessie", { phone: "213-555-1234", address: "123 N 1st Ave" });
 
-    const result = map.delete('Jessie');
+  const result = map.delete("Jessie");
 
-    type test = [Expect<Equal<typeof result, boolean>>];
+  type test = [Expect<Equal<typeof result, boolean>>];
 });
 
 doNotExecute(() => {
-    const map = new Map();
+  const map = new Map();
 
-    map.set('Jessie', {phone: '213-555-1234', address: '123 N 1st Ave'});
-    map.set('Hilary', {phone: '617-555-4321', address: '321 S 2nd St'});
+  map.set("Jessie", { phone: "213-555-1234", address: "123 N 1st Ave" });
+  map.set("Hilary", { phone: "617-555-4321", address: "321 S 2nd St" });
 
-    const size = map.size;
+  const size = map.size;
 
-    type testSize = [Expect<Equal<typeof size, number>>];
+  type testSize = [Expect<Equal<typeof size, number>>];
 });
 
 doNotExecute(() => {
-    const map = new Map();
+  const map = new Map();
 
-    map.set('Jessie', {phone: '213-555-1234', address: '123 N 1st Ave'});
-    map.set('Hilary', {phone: '617-555-4321', address: '321 S 2nd St'});
+  map.set("Jessie", { phone: "213-555-1234", address: "123 N 1st Ave" });
+  map.set("Hilary", { phone: "617-555-4321", address: "321 S 2nd St" });
 
-    const cleared = map.clear();
+  const cleared = map.clear();
 
-    type testClear = [Expect<Equal<typeof cleared, void>>];
+  type testClear = [Expect<Equal<typeof cleared, void>>];
 });

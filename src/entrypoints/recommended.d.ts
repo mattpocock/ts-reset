@@ -4,5 +4,6 @@
 /// <reference path="json-parse.d.ts" />
 /// <reference path="array-includes.d.ts" />
 /// <reference path="set-has.d.ts" />
+/// <reference path="map-constructor.d.ts" />
 /// <reference path="map-has.d.ts" />
 /// <reference path="array-index-of.d.ts" />

@@ -60,6 +60,11 @@
       "import": "./dist/set-has.mjs",
       "default": "./dist/set-has.js"
     },
+    "./map-constructor": {
+      "types": "./dist/map-constructor.d.ts",
+      "import": "./dist/map-constructor.mjs",
+      "default": "./dist/map-constructor.js"
+    },
     "./map-has": {
       "types": "./dist/map-has.d.ts",
       "import": "./dist/map-has.mjs",

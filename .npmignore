@@ -7,3 +7,4 @@ tsconfig.json
 .github
 .changeset
 .turbo
+turbo.json

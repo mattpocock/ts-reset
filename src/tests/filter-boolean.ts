@@ -38,3 +38,11 @@ doNotExecute(() => {
 
   type tests = [Expect<Equal<typeof result, never[]>>];
 });
+
+doNotExecute(() => {
+  const arr: string[] | number[] = {} as any;
+
+  const result = arr.filter((x) => typeof x === "string");
+
+  type tests = [Expect<Equal<typeof result, string[]>>];
+});

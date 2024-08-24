@@ -1,5 +1,45 @@
 # @total-typescript/ts-reset
 
+## 0.6.0
+
+### Minor Changes
+
+- 6574858: Added a rule, `/map-constructor`, to default `Map` to `Map<unknown, unknown>` when no arguments are passed to the constructor.
+
+  Before, you'd get `any` for both key and value types. Now, the result of `Map.get` is `unknown` instead of `any`:
+
+  ```ts
+  const userMap = new Map();
+
+  const value = userMap.get("matt"); // value: unknown
+  ```
+
+  This now is part of the recommended rules.
+
+- 5bf3a15: Added a rule, `/promise-catch`, to change the `catch` method to take `unknown` instead of `any` as an argument.
+
+  ```ts
+  const promise = Promise.reject("error");
+
+  // BEFORE
+
+  promise.catch((error) => {
+    console.error(error); // error is any!
+  });
+
+  // AFTER
+
+  promise.catch((error) => {
+    console.error(error); // error is unknown!
+  });
+  ```
+
+### Patch Changes
+
+- 53cee4f: author: @none23
+
+  Fixed a bug where running .filter on a union of arrays would not work.
+
 ## 0.5.1
 
 ### Patch Changes

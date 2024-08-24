@@ -65,6 +65,12 @@ doNotExecute(async () => {
   );
 });
 
+doNotExecute(() => {
+  const arr: string[] | number[] = {} as any;
+
+  const result = arr.indexOf("abc");
+});
+
 // lastIndexOf
 
 doNotExecute(async () => {
@@ -130,4 +136,10 @@ doNotExecute(async () => {
     // @ts-expect-error
     true,
   );
+});
+
+doNotExecute(() => {
+  const arr: string[] | number[] = {} as any;
+
+  const result = arr.lastIndexOf("abc");
 });

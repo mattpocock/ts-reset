@@ -59,3 +59,8 @@ doNotExecute(() => {
 
   type testClear = [Expect<Equal<typeof cleared, void>>];
 });
+
+doNotExecute(() => {
+  const map = new Map() satisfies Map<string, boolean>;
+  type test = [Expect<Equal<typeof map, Map<string, boolean>>>];
+});

@@ -1,3 +1,3 @@
 interface MapConstructor {
-  new (): Map<unknown, unknown>;
+  new <K = unknown, V = unknown>(): Map<K, V>;
 }

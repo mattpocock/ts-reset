@@ -1,5 +1,11 @@
 # @total-typescript/ts-reset
 
+## 0.6.1
+
+### Patch Changes
+
+- 757be40: Fixed a bug where creating an empty map would no longer infer types correctly.
+
 ## 0.6.0
 
 ### Minor Changes

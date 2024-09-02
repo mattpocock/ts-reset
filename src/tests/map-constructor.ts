@@ -71,6 +71,14 @@ doNotExecute(() => {
 });
 
 doNotExecute(() => {
+  function expectsBooleanMap(map: Map<string, boolean>) {
+    return map;
+  }
+  const map = expectsBooleanMap(new Map());
+  type test = [Expect<Equal<typeof map, Map<string, boolean>>>];
+});
+
+doNotExecute(() => {
   const map = new Map([
     ["foo", 1],
     ["bar", 2],

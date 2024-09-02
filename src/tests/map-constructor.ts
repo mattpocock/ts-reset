@@ -59,3 +59,29 @@ doNotExecute(() => {
 
   type testClear = [Expect<Equal<typeof cleared, void>>];
 });
+
+doNotExecute(() => {
+  const map = new Map() satisfies Map<string, boolean>;
+  type test = [Expect<Equal<typeof map, Map<string, boolean>>>];
+});
+
+doNotExecute(() => {
+  const map: Map<string, boolean> = new Map();
+  type test = [Expect<Equal<typeof map, Map<string, boolean>>>];
+});
+
+doNotExecute(() => {
+  function expectsBooleanMap(map: Map<string, boolean>) {
+    return map;
+  }
+  const map = expectsBooleanMap(new Map());
+  type test = [Expect<Equal<typeof map, Map<string, boolean>>>];
+});
+
+doNotExecute(() => {
+  const map = new Map([
+    ["foo", 1],
+    ["bar", 2],
+  ]);
+  type test = [Expect<Equal<typeof map, Map<string, number>>>];
+});

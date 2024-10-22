@@ -1,4 +1,4 @@
-![TS Reset - Improved TypeScript's Built-in Typings](./og-image.png)
+![TS Reset - Improved TypeScript's Built-in Typings](https://raw.githubusercontent.com/mattpocock/ts-reset/main/og-image.png)
 
 **Without `ts-reset`**:
 

@@ -96,6 +96,11 @@
       "types": "./dist/storage.d.ts",
       "import": "./dist/storage.mjs",
       "default": "./dist/storage.js"
+    },
+    "./query-selector": {
+      "types": "./dist/query-selector.d.ts",
+      "import": "./dist/query-selector.mjs",
+      "default": "./dist/query-selector.js"
     }
   },
   "keywords": [],

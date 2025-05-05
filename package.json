@@ -96,6 +96,11 @@
       "types": "./dist/storage.d.ts",
       "import": "./dist/storage.mjs",
       "default": "./dist/storage.js"
+    },
+    "./trim": {
+      "types": "./dist/trim.d.ts",
+      "import": "./dist/trim.mjs",
+      "default": "./dist/trim.js"
     }
   },
   "keywords": [],

@@ -96,6 +96,11 @@
       "types": "./dist/storage.d.ts",
       "import": "./dist/storage.mjs",
       "default": "./dist/storage.js"
+    },
+    "./push-message-data": {
+      "types": "./dist/push-message-data.d.ts",
+      "import": "./dist/push-message-data.mjs",
+      "default": "./dist/push-message-data.js"
     }
   },
   "keywords": [],

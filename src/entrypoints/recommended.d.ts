@@ -8,3 +8,4 @@
 /// <reference path="map-has.d.ts" />
 /// <reference path="array-index-of.d.ts" />
 /// <reference path="promise-catch.d.ts" />
+/// <reference path="push-message-data.d.ts" />

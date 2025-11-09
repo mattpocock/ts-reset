@@ -46,3 +46,53 @@ doNotExecute(() => {
 
   type tests = [Expect<Equal<typeof result, string[]>>];
 });
+
+doNotExecute(() => {
+  const arrOk: { key: string }[] = [{ key: "val" }];
+  const arrBad: {}[] = [{}];
+
+  // Look ma, no error!
+  ((): { key: string }[] => {
+    return arrOk.filter(Boolean);
+  })();
+  ((): { key: string }[] => {
+    const result = arrOk.filter(Boolean);
+    return result;
+  })();
+
+  // Look ma, proper errors!
+  ((): { key: string }[] => {
+    // @ts-expect-error
+    return arrBad.filter(Boolean);
+  })();
+  ((): { key: string }[] => {
+    const result = arrBad.filter(Boolean);
+    // @ts-expect-error
+    return result;
+  })();
+});
+
+doNotExecute(() => {
+  const arrOk: readonly { key: string }[] = [{ key: "val" }];
+  const arrBad: readonly {}[] = [{}];
+
+  // Look ma, no error!
+  ((): { key: string }[] => {
+    return arrOk.filter(Boolean);
+  })();
+  ((): { key: string }[] => {
+    const result = arrOk.filter(Boolean);
+    return result;
+  })();
+
+  // Look ma, proper errors!
+  ((): { key: string }[] => {
+    // @ts-expect-error
+    return arrBad.filter(Boolean);
+  })();
+  ((): { key: string }[] => {
+    const result = arrBad.filter(Boolean);
+    // @ts-expect-error
+    return result;
+  })();
+});

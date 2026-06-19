@@ -9,3 +9,4 @@
 /// <reference path="array-index-of.d.ts" />
 /// <reference path="map-groupby.d.ts" />
 /// <reference path="object-groupby.d.ts" />
+/// <reference path="boolean-to-string.d.ts" />

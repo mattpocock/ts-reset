@@ -88,6 +88,11 @@
       "import": "./dist/array-index-of.mjs",
       "default": "./dist/array-index-of.js"
     },
+    "./boolean-to-string": {
+      "types": "./dist/boolean-to-string.d.ts",
+      "import": "./dist/boolean-to-string.mjs",
+      "default": "./dist/boolean-to-string.js"
+    },
     "./dom": {
       "types": "./dist/dom.d.ts",
       "import": "./dist/dom.mjs",

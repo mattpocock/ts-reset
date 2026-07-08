@@ -19,9 +19,7 @@ interface BooleanConstructor {
   readonly prototype: Boolean;
 }
 
-type NonFalsy<T> = T extends false | 0 | "" | null | undefined | 0n
-  ? never
-  : T;
+type NonFalsy<T> = T extends false | 0 | "" | null | undefined | 0n ? never : T;
 
 type Equal<X, Y> =
   (<T>() => T extends X ? 1 : 2) extends <T>() => T extends Y ? 1 : 2

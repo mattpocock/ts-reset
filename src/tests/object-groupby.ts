@@ -22,9 +22,7 @@ doNotExecute(() => {
   );
 
   const group = grouped["first"];
-  type test = Expect<
-    Equal<typeof group, [string, ...string[]] | undefined>
-  >;
+  type test = Expect<Equal<typeof group, [string, ...string[]] | undefined>>;
 });
 
 // Assignability: grouped values should be assignable to T[]
@@ -43,7 +41,9 @@ doNotExecute(() => {
 
 // Destructuring after narrowing
 doNotExecute(() => {
-  const grouped = Object.groupBy([1, 2, 3], (x) => (x % 2 === 0 ? "even" : "odd"));
+  const grouped = Object.groupBy([1, 2, 3], (x) =>
+    x % 2 === 0 ? "even" : "odd",
+  );
 
   const group = grouped["even"];
   if (group) {
@@ -78,7 +78,9 @@ doNotExecute(() => {
   type test = Expect<
     Equal<
       typeof grouped,
-      Partial<Record<Role, [(typeof items)[number], ...(typeof items)[number][]]>>
+      Partial<
+        Record<Role, [(typeof items)[number], ...(typeof items)[number][]]>
+      >
     >
   >;
 });

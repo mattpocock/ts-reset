@@ -20,10 +20,9 @@ doNotExecute(() => {
 
 // Case 2: filter(Boolean) assigned to variable - correctly errors
 doNotExecute(() => {
-  const badPets = [
-    { type: "cat", name: "Fluffy" },
-    { type: "dog" },
-  ].filter(Boolean);
+  const badPets = [{ type: "cat", name: "Fluffy" }, { type: "dog" }].filter(
+    Boolean,
+  );
 
   // @ts-expect-error - missing `name` on second element
   pet(badPets);
@@ -34,10 +33,7 @@ doNotExecute(() => {
 doNotExecute(() => {
   pet(
     // @ts-expect-error - missing `name` on second element
-    [
-      { type: "cat", name: "Fluffy" },
-      { type: "dog" },
-    ].filter(Boolean),
+    [{ type: "cat", name: "Fluffy" }, { type: "dog" }].filter(Boolean),
   );
 });
 

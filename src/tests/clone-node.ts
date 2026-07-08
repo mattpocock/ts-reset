@@ -10,7 +10,10 @@ doNotExecute(() => {
 
 // SVGElement.cloneNode(true) should return SVGElement (original issue #192)
 doNotExecute(() => {
-  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg") as SVGElement;
+  const svg = document.createElementNS(
+    "http://www.w3.org/2000/svg",
+    "svg",
+  ) as SVGElement;
   const clone = svg.cloneNode(true);
 
   type test = Expect<Equal<typeof clone, SVGElement>>;
